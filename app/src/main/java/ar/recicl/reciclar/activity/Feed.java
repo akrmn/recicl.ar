@@ -1,5 +1,6 @@
 package ar.recicl.reciclar.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
@@ -44,6 +45,8 @@ public class Feed extends Base {
         switch (item.getItemId()) {
             case R.id.action_profile:
                 return onActionProfileSelected();
+            case R.id.action_logout:
+                return onActionLogoutSelected();
         }
 
         return super.onOptionsItemSelected(item);
@@ -85,7 +88,14 @@ public class Feed extends Base {
 
     private boolean onActionProfileSelected() {
         showSnackbarMessage("Ahora se abre la vista del perfil", null, null);
+        return true;
+    }
 
+    private boolean onActionLogoutSelected() {
+        getFirebase().unauth();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
         return true;
     }
 }

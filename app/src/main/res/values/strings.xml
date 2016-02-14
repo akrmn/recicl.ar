@@ -6,4 +6,8 @@
     <string name="fab_sheet_item_recycle">Recycle</string>
     <string name="fab_sheet_item_scan">Scan code</string>
 
+
+    <string name="facebook_app_id">429785703877966</string>
+    <string name="title_activity_main">recicl.ar</string>
+    <string name="action_logout">Logout</string>
 </resources>

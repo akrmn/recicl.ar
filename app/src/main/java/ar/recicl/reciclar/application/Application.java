@@ -10,11 +10,11 @@ public class Application extends android.app.Application {
     public void onCreate() {
         super.onCreate();
         Firebase.setAndroidContext(this);
-
-        sFirebase = new Firebase("https://boiling-heat-6697.firebaseio.com/");
     }
 
     public static Firebase getFirebase() {
+        if (sFirebase == null)
+            sFirebase = new Firebase("https://boiling-heat-6697.firebaseio.com/");
         return sFirebase;
     }
 }
