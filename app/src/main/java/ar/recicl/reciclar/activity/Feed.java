@@ -1,41 +1,45 @@
 package ar.recicl.reciclar.activity;
 
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.gordonwong.materialsheetfab.MaterialSheetFab;
+
 import ar.recicl.reciclar.R;
+import ar.recicl.reciclar.widget.FAB;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class Feed extends AppCompatActivity {
+public class Feed extends Base {
+
+    @Bind(R.id.fab) FAB fab;
+    MaterialSheetFab<FAB> mMaterialSheetFab;
+
+    public Feed() {
+        super(R.layout.activity_feed, R.menu.feed, R.string.app_name, false);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setContentView(R.layout.activity_feed);
         ButterKnife.bind(this);
 
-        setContentView(R.layout.activity_feed);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-    }
-
-    @OnClick(R.id.fab)
-    void onClick(View view) {
-        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
+        setupToolbar();
+        setupFAB();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_init, menu);
+        getMenuInflater().inflate(R.menu.feed, menu);
         return true;
     }
 
@@ -52,5 +56,39 @@ public class Feed extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void setupToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+    }
+
+    private void setupFAB() {
+        View sheetView = findViewById(R.id.fab_sheet);
+        View overlay = findViewById(R.id.dim_overlay);
+        int sheetColor = ContextCompat.getColor(this, R.color.background_card);
+        int fabColor = ContextCompat.getColor(this, R.color.accent);
+
+        // Initialize material sheet FAB
+        mMaterialSheetFab = new MaterialSheetFab<>(fab, sheetView, overlay, sheetColor, fabColor);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mMaterialSheetFab.isSheetVisible()) {
+            mMaterialSheetFab.hideSheet();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @OnClick(R.id.fab_sheet_item_recycle)
+    void onClickItemRecycle() {
+        showSnackbarMessage("Ahora se abre la vista de reciclar", null, null);
+    }
+
+    @OnClick(R.id.fab_sheet_item_scan)
+    void onClickItemScan() {
+        showSnackbarMessage("Ahora se abre la vista de escanear código", null, null);
     }
 }
