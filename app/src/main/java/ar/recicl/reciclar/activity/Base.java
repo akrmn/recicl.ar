@@ -10,11 +10,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
+import com.firebase.client.Firebase;
+
 import ar.recicl.reciclar.R;
+import ar.recicl.reciclar.application.Application;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -117,5 +119,9 @@ public abstract class Base extends AppCompatActivity {
         Snackbar.make(mCoordinatorLayout, messageResId, Snackbar.LENGTH_LONG)
                 .setAction(actionTextResId, action)
                 .show();
+    }
+
+    public Firebase getFirebase() {
+        return Application.getFirebase();
     }
 }

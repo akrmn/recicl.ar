@@ -1,13 +1,12 @@
 package ar.recicl.reciclar.activity;
 
-import android.support.design.widget.Snackbar;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.firebase.client.Firebase;
 import com.gordonwong.materialsheetfab.MaterialSheetFab;
 
 import ar.recicl.reciclar.R;
@@ -17,6 +16,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class Feed extends Base {
+
+    private Firebase mRef;
 
     @Bind(R.id.fab) FAB fab;
     MaterialSheetFab<FAB> mMaterialSheetFab;
@@ -37,22 +38,12 @@ public class Feed extends Base {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.feed, menu);
-        return true;
-    }
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_profile:
+                return onActionProfileSelected();
         }
 
         return super.onOptionsItemSelected(item);
@@ -90,5 +81,11 @@ public class Feed extends Base {
     @OnClick(R.id.fab_sheet_item_scan)
     void onClickItemScan() {
         showSnackbarMessage("Ahora se abre la vista de escanear código", null, null);
+    }
+
+    private boolean onActionProfileSelected() {
+        showSnackbarMessage("Ahora se abre la vista del perfil", null, null);
+
+        return true;
     }
 }
