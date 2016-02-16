@@ -43,6 +43,13 @@ public class Welcome extends FirebaseLoginBaseActivity {
         showFirebaseLoginPrompt();
     }
 
+    @OnClick(R.id.button_register)
+    void onButtonRegisterClick() {
+        Intent intent = new Intent(this, Register.class);
+        startActivity(intent);
+        finish();
+    }
+
     @Override
     protected Firebase getFirebaseRef() {
         return Application.getFirebase();

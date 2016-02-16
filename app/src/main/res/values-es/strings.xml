@@ -14,4 +14,8 @@
     <string name="label_login_with_google">Ingresar con Google</string>
     <string name="label_login_with_twitter">Ingresar con Twitter</string>
     <string name="label_password">Contraseña</string>
+    <string name="label_register">Registrarse</string>
+    <string name="label_enter_email">Ingresa Email</string>
+    <string name="label_enter_password">Ingresa Contraseña</string>
+    <string name="label_enter_password_again">Ingresa Contraseña (De nuevo)</string>
 </resources>

@@ -16,4 +16,10 @@
     <string name="label_login_with_facebook">Login with Facebook</string>
     <string name="label_login_with_google">Login with Google</string>
     <string name="label_login_with_twitter">Login with Twitter</string>
+
+    <string name="label_register">Register</string>
+    <string name="label_enter_email">Enter Email</string>
+    <string name="label_enter_password">Enter Password</string>
+    <string name="label_enter_password_again">Enter Password (Again)</string>
+    <string name="hello_world">Welcome to recicl.ar :)</string>
 </resources>
