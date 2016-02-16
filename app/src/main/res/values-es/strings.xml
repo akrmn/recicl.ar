@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="welcome_message">Bienvenidos al fantástico mundo del reciclaje :)</string>
     <string name="app_name">recicl.ar</string>
     <string name="action_logout">Cerrar sesión</string>
     <string name="action_profile">Perfil</string>
