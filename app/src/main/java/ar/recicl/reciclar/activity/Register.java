@@ -10,8 +10,6 @@ import butterknife.ButterKnife;
 
 public class Register extends Base {
 
-    private Firebase mRef;
-
     public Register() {
         super(R.layout.activity_register, R.menu.register, R.string.title_activity_main, true);
     }
@@ -19,6 +17,5 @@ public class Register extends Base {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 }
