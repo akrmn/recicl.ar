@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">recicl.ar</string>
 
+    <string name="welcome_message">Bienvenidos al fantástico mundo del reciclaje :)</string>
+
     <string name="hello_world">Bienvenidos a Recicl.ar :)</string>
     <string name="action_profile">Profile</string>
     <string name="fab_sheet_item_recycle">Recycle</string>
