@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">recicl.ar</string>
+    <string name="action_logout">Cerrar sesión</string>
+    <string name="action_profile">Perfil</string>
+    <string name="fab_sheet_item_recycle">Reciclar</string>
+    <string name="fab_sheet_item_scan">Escanear código</string>
+    <string name="hello_world">Bienvenidos a recicl.ar :)</string>
+    <string name="label_login">Ingresar</string>
+    <string name="divisor_or">o</string>
+    <string name="label_email">Email</string>
+    <string name="label_login_with_facebook">Ingresar con Facebook</string>
+    <string name="label_login_with_google">Ingresar con Google</string>
+    <string name="label_login_with_twitter">Ingresar con Twitter</string>
+    <string name="label_password">Contraseña</string>
+</resources>

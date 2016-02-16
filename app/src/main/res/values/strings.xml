@@ -1,15 +1,26 @@
 <resources>
     <string name="app_name">recicl.ar</string>
 
+<<<<<<< Updated upstream
     <string name="welcome_message">Bienvenidos al fantástico mundo del reciclaje :)</string>
 
     <string name="hello_world">Bienvenidos a Recicl.ar :)</string>
+=======
+>>>>>>> Stashed changes
     <string name="action_profile">Profile</string>
     <string name="fab_sheet_item_recycle">Recycle</string>
     <string name="fab_sheet_item_scan">Scan code</string>
 
-
-    <string name="facebook_app_id">429785703877966</string>
-    <string name="title_activity_main">recicl.ar</string>
+    <string name="facebook_app_id" translatable="false">429785703877966</string>
+    <string name="title_activity_main" translatable="false">recicl.ar</string>
     <string name="action_logout">Logout</string>
+    <string name="hello_world">Welcome to recicl.ar :)</string>
+
+    <string name="label_login">Login</string>
+    <string name="label_email">Email</string>
+    <string name="label_password">Password</string>
+    <string name="divisor_or">or</string>
+    <string name="label_login_with_facebook">Login with Facebook</string>
+    <string name="label_login_with_google">Login with Google</string>
+    <string name="label_login_with_twitter">Login with Twitter</string>
 </resources>
