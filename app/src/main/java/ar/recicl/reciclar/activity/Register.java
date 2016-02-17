@@ -43,10 +43,20 @@ public class Register extends Base {
             @Override
             public void onSuccess(Map<String, Object> result) {
                 System.out.println("Successfully created user account with uid: " + result.get("uid"));
+                showSnackbarMessage("Cuenta creada satisfactoriamente!", null, null);
             }
             @Override
             public void onError(FirebaseError firebaseError) {
-                System.out.println("Something went wrong");
+                switch(firebaseError.getCode()) {
+                    case -15: showSnackbarMessage("El email ingresado no es válido.", null, null);
+                              break;
+                    case -18: showSnackbarMessage("El email ingresado ya se encuentra registrado.", null, null);
+                              break;
+                    case -24: showSnackbarMessage("Recicl.ar no pudo conectarse con el servido :(", null, null);
+                              break;
+                    default: showSnackbarMessage("Ups! Ha ocurrido un error inesperado.", null, null);
+                             break;
+                }
             }
         });
     }
