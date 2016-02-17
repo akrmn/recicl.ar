@@ -47,7 +47,6 @@ public class Welcome extends FirebaseLoginBaseActivity {
     void onButtonRegisterClick() {
         Intent intent = new Intent(this, Register.class);
         startActivity(intent);
-        finish();
     }
 
     @Override

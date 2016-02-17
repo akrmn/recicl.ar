@@ -25,7 +25,6 @@ public class Register extends Base {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @OnClick(R.id.button_complete_register)
