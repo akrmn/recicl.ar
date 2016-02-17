@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/label_enter_email"
-        android:id="@+id/textView_email"
+        android:id="@+id/label_email"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -29,8 +29,8 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/editText"
-        android:layout_below="@+id/textView_email"
+        android:id="@+id/input_email"
+        android:layout_below="@+id/label_email"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -41,8 +41,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/label_enter_password"
-        android:id="@+id/textView_password1"
-        android:layout_below="@+id/editText"
+        android:id="@+id/label_password1"
+        android:layout_below="@+id/input_email"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -51,8 +51,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/label_enter_password_again"
-        android:id="@+id/textView_password2"
-        android:layout_below="@+id/editText2"
+        android:id="@+id/label_password2"
+        android:layout_below="@+id/input_password1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -61,31 +61,31 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/textView_password1"
+        android:id="@+id/input_password1"
+        android:layout_below="@+id/label_password1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:layout_alignRight="@+id/input_email"
+        android:layout_alignEnd="@+id/input_email" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:id="@+id/editText4"
-        android:layout_below="@+id/textView_password2"
+        android:id="@+id/input_password2"
+        android:layout_below="@+id/label_password2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_alignEnd="@+id/editText2" />
+        android:layout_alignRight="@+id/input_password1"
+        android:layout_alignEnd="@+id/input_password1" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_register"
-        android:id="@+id/button"
+        android:id="@+id/button_complete_register"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 

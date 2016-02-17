@@ -25,7 +25,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView_email"
+                android:id="@+id/label_email"
                 android:ems="10"
                 android:hint="@string/label_email"
                 android:paddingTop="20dp"

@@ -18,7 +18,6 @@ import butterknife.OnClick;
 
 public class Feed extends Base {
 
-    private Firebase mRef;
 
     @Bind(R.id.fab) FAB fab;
     MaterialSheetFab<FAB> mMaterialSheetFab;
