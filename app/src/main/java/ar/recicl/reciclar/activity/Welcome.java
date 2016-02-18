@@ -3,6 +3,7 @@ package ar.recicl.reciclar.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -17,6 +18,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class Welcome extends FirebaseLoginBaseActivity {
+
+    private static final String TAG = Welcome.class.getSimpleName();
 
     @Bind(R.id.toolbar) Toolbar mToolbar;
 
@@ -56,12 +59,12 @@ public class Welcome extends FirebaseLoginBaseActivity {
 
     @Override
     protected void onFirebaseLoginProviderError(FirebaseLoginError firebaseLoginError) {
-        // TODO: Handle an error from the authentication provider
+        Log.e(TAG, "ProviderError: " + firebaseLoginError);
     }
 
     @Override
     protected void onFirebaseLoginUserError(FirebaseLoginError firebaseLoginError) {
-        // TODO: Handle an error from the user
+        Log.e(TAG, "UserError: " + firebaseLoginError);
     }
 
     @Override
