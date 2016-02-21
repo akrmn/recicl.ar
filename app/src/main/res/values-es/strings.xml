@@ -18,4 +18,5 @@
     <string name="label_enter_email">Ingresa Email</string>
     <string name="label_enter_password">Ingresa Contraseña</string>
     <string name="label_enter_password_again">Ingresa Contraseña (De nuevo)</string>
+    <string name="register_message">Crear usuario nuevo</string>
 </resources>

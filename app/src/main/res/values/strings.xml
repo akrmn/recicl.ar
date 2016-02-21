@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">recicl.ar</string>
     <string name="welcome_message">Welcome to the amazing world of recycling :)</string>
+    <string name="register_message">Create new user</string>
 
     <string name="action_profile">Profile</string>
     <string name="fab_sheet_item_recycle">Recycle</string>

@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
 import com.firebase.ui.auth.core.AuthProviderType;
 import com.firebase.ui.auth.core.FirebaseLoginBaseActivity;
 import com.firebase.ui.auth.core.FirebaseLoginError;
@@ -43,7 +44,17 @@ public class Welcome extends FirebaseLoginBaseActivity {
 
     @OnClick(R.id.button_login)
     void onButtonLoginClick() {
-        showFirebaseLoginPrompt();
+        //showFirebaseLoginPrompt();
+        Application.getFirebase().authWithPassword("prueba@prueba.prueba", "prueba", new Firebase.AuthResultHandler() {
+            @Override
+            public void onAuthenticated(AuthData authData) {
+                System.out.println("User ID: " + authData.getUid() + ", Provider: " + authData.getProvider());
+            }
+            @Override
+            public void onAuthenticationError(FirebaseError firebaseError) {
+                // there was an error
+            }
+        });
     }
 
     @OnClick(R.id.button_register)
