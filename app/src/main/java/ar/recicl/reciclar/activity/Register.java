@@ -8,6 +8,8 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ar.recicl.reciclar.R;
 import butterknife.Bind;
@@ -26,6 +28,7 @@ public class Register extends Base {
     @Bind(R.id.password2Wrapper)
     TextInputLayout wrapper_pass2;
 
+
     public Register() {
         super(R.layout.activity_register, R.menu.register, R.string.title_activity_main, true);
     }
@@ -37,40 +40,46 @@ public class Register extends Base {
 
     @OnClick(R.id.button_complete_register)
     void onButtonCompleteRegisterClick() {
+        boolean error = false;
+        wrapper_email.setError(null);
+        wrapper_pass1.setError(null);
+        wrapper_pass2.setError(null);
         if(getTextAsString(user_email).equals("")){
-            wrapper_email.setError("Este campo es obligatorio.");
-            return;
+            wrapper_email.setError(getString(R.string.required_field_error));
+            error = true;
         }
         if(getTextAsString(user_password1).equals("")){
-            wrapper_pass1.setError("Este campo es obligatorio.");
-            return;
+            wrapper_pass1.setError(getString(R.string.required_field_error));
+            error = true;
         }
         if(getTextAsString(user_password2).equals("")){
-            wrapper_pass2.setError("Este campo es obligatorio.");
-            return;
+            wrapper_pass2.setError(getString(R.string.required_field_error));
+            error = true;
         }
         if(!getTextAsString(user_password1).equals(getTextAsString(user_password2))){
-            wrapper_pass2.setError("Las contraseñas ingresadas no coinciden");
+            wrapper_pass2.setError(getString(R.string.match_pass_error));
+            error = true;
+        }
+        if (error){
             return;
         }
         getFirebase().createUser(getTextAsString(user_email), getTextAsString(user_password1), new Firebase.ValueResultHandler<Map<String, Object>>() {
             @Override
             public void onSuccess(Map<String, Object> result) {
-                System.out.println("Successfully created user account with uid: " + result.get("uid"));
-                showSnackbarMessage("Cuenta creada satisfactoriamente!", null, null);
+                showSnackbarMessage(getString(R.string.create_user_success), null, null);
                 finish();
             }
             @Override
             public void onError(FirebaseError firebaseError) {
                 switch(firebaseError.getCode()) {
-                    case -15: wrapper_email.setError("El email ingresado no es válido.");
+                    case -15: wrapper_email.setError(getString(R.string.invalid_mail));
                               break;
-                    case -18: showSnackbarMessage("El email ingresado ya se encuentra registrado.", null, null);
+                    case -18: wrapper_email.setError(getString(R.string.taken_email));
                               break;
-                    case -24: showSnackbarMessage("Recicl.ar no pudo conectarse con el servido :(", null, null);
+                    case -24: showSnackbarMessage(getString(R.string.server_error), null, null);
                               break;
-                    default: showSnackbarMessage("Ups! Ha ocurrido un error inesperado.", null, null);
-                             break;
+                    default: showSnackbarMessage(getString(R.string.unexpected_error), null, null);
+                             finish();
                 }
             }
         });

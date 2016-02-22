@@ -19,4 +19,11 @@
     <string name="label_enter_password">Ingresa Contraseña</string>
     <string name="label_enter_password_again">Ingresa Contraseña (De nuevo)</string>
     <string name="register_message">Crear usuario nuevo</string>
+    <string name="required_field_error">Este campo es obligatorio</string>
+    <string name="create_user_success">Usuario creado satisfactoriamente</string>
+    <string name="invalid_mail">El email ingresado no es válido</string>
+    <string name="match_pass_error">Las contraseñas ingresadas no coinciden</string>
+    <string name="server_error">Recicl.ar no pudo conectarse al servidor</string>
+    <string name="taken_email">El email ingresado no es válido</string>
+    <string name="unexpected_error">Ups! Error inesperado</string>
 </resources>
