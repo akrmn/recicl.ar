@@ -67,6 +67,7 @@ public class Register extends Base {
             @Override
             public void onSuccess(Map<String, Object> result) {
                 showSnackbarMessage(getString(R.string.create_user_success), null, null);
+
                 finish();
             }
             @Override
