@@ -1,8 +1,13 @@
 package ar.recicl.reciclar.widget;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -100,4 +105,6 @@ public class FAB extends FloatingActionButton implements AnimatedFab {
     private Interpolator getInterpolator() {
         return AnimationUtils.loadInterpolator(getContext(), R.interpolator.msf_interpolator);
     }
+
+
 }

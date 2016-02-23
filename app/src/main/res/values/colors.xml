@@ -5,9 +5,17 @@
     <color name="primary">#00bcd4</color>
     <color name="primary_dark">#00838f</color>
     <color name="accent">#1de9b6</color>
+    <color name="lineBreak">#D8D4D4</color>
 
     <color name="background_card">#fff</color>
 
-    <color name="text_black_87">#de000000</color>
-    <color name="text_white_87">#deFFFFFF</color>
+    <color name="toolbar_plus_background">#ff212121</color>
+
+    <color name="text_primary_white">#FFFFFFFF</color>
+    <color name="text_secondary_white">#B3FFFFFF</color>
+    <color name="text_hint_white">#80FFFFFF</color>
+
+    <color name="text_primary_black">#DE000000</color>
+    <color name="text_secondary_black">#8A000000</color>
+    <color name="text_hint_black">#61000000</color>
 </resources>

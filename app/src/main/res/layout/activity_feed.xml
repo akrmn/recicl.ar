@@ -2,6 +2,7 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,7 +10,7 @@
     android:focusableInTouchMode="true"
     tools:context="ar.recicl.reciclar.activity.Feed">
 
-    <include layout="@layout/include_toolbar" />
+    <include layout="@layout/include_toolbar_plus" />
 
     <include layout="@layout/content_feed"/>
 
@@ -19,16 +20,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_recycle_black_24dp" />
+        android:src="@drawable/ic_recycle_white_24dp"
+        app:layout_behavior="ar.recicl.reciclar.widget.ScrollAwareFABBehavior"/>
 
     <!-- Overlay that dims the screen -->
     <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
         android:id="@+id/dim_overlay"
+        android:elevation="6dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <!-- Circular reveal container for the sheet -->
     <io.codetail.widget.RevealLinearLayout
+        android:elevation="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="end|bottom"
@@ -64,9 +68,10 @@
                     <TextView
                         android:id="@+id/fab_sheet_item_recycle"
                         style="@style/TextAppearance.MaterialSheetFab.Sheet.Item"
-                        android:drawableLeft="@drawable/ic_recycle_black_24dp"
-                        android:drawableStart="@drawable/ic_recycle_black_24dp"
-                        android:text="@string/fab_sheet_item_recycle" />
+                        android:drawableLeft="@drawable/ic_recycle_white_24dp"
+                        android:drawableStart="@drawable/ic_recycle_white_24dp"
+                        android:text="@string/fab_sheet_item_recycle"
+                        android:textColor="@color/text_primary_white"/>
                 </LinearLayout>
 
             </LinearLayout>

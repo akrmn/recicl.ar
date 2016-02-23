@@ -9,9 +9,8 @@
     <string name="match_pass_error">The passwords entered does not match</string>
     <string name="invalid_mail">The email entered is not valid</string>
     <string name="taken_email">The email entered is already taken</string>
-    <string name="server_error">Recicl.ar cant connect to the server</string>
+    <string name="server_error">Recicl.ar can\'t connect to the server</string>
     <string name="unexpected_error">Ups! Unexpected error</string>
-
 
     <string name="action_profile">Profile</string>
     <string name="fab_sheet_item_recycle">Recycle</string>

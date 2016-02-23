@@ -2,6 +2,9 @@ package ar.recicl.reciclar.application;
 
 import com.firebase.client.Firebase;
 
+import ar.recicl.reciclar.R;
+import ar.recicl.reciclar.data.Person;
+
 public class Application extends android.app.Application {
 
     private static Firebase sFirebase;

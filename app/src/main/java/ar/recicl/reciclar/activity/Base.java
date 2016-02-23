@@ -1,8 +1,10 @@
 package ar.recicl.reciclar.activity;
 
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -119,6 +121,15 @@ public abstract class Base extends AppCompatActivity {
         Snackbar.make(mCoordinatorLayout, messageResId, Snackbar.LENGTH_LONG)
                 .setAction(actionTextResId, action)
                 .show();
+    }
+
+    Paint getDividerPaint() {
+        Paint paint = new Paint();
+        paint.setStrokeWidth(1);
+        paint.setColor(ContextCompat.getColor(this, R.color.lineBreak));
+        paint.setAntiAlias(true);
+
+        return paint;
     }
 
     public Firebase getFirebase() {

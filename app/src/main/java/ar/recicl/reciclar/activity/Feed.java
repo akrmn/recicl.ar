@@ -3,24 +3,30 @@ package ar.recicl.reciclar.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.firebase.client.Firebase;
 import com.gordonwong.materialsheetfab.MaterialSheetFab;
+import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import ar.recicl.reciclar.R;
+import ar.recicl.reciclar.adapter.FeedAdapter;
 import ar.recicl.reciclar.widget.FAB;
 import butterknife.Bind;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class Feed extends Base {
 
-
-    @Bind(R.id.fab) FAB fab;
+    @Bind(R.id.recycler_view) RecyclerView mRecyclerView;
+    @Bind(R.id.swipeContainer) SwipeRefreshLayout mSwipeContainer;
+    @Bind(R.id.fab) FAB mFab;
     MaterialSheetFab<FAB> mMaterialSheetFab;
+
+    private FeedAdapter mFeedAdapter;
 
     public Feed() {
         super(R.layout.activity_feed, R.menu.feed, R.string.app_name, false);
@@ -32,6 +38,7 @@ public class Feed extends Base {
 
         setupToolbar();
         setupFAB();
+        setupRecyclerView();
     }
 
     @Override
@@ -60,10 +67,32 @@ public class Feed extends Base {
         int fabColor = ContextCompat.getColor(this, R.color.accent);
 
         // Initialize material sheet FAB
-        mMaterialSheetFab = new MaterialSheetFab<>(fab, sheetView, overlay, sheetColor, fabColor);
+        mMaterialSheetFab = new MaterialSheetFab<>(mFab, sheetView, overlay, sheetColor, fabColor);
     }
 
-    @Override
+    private void setupRecyclerView() {
+        mFeedAdapter = new FeedAdapter(Feed.this);
+        mRecyclerView.setAdapter(mFeedAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(Feed.this));
+
+        mRecyclerView.addItemDecoration(new HorizontalDividerItemDecoration.Builder(this)
+                .showLastDivider()
+                .paint(getDividerPaint())
+                .build());
+
+        mSwipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // ToDo!!!
+                mSwipeContainer.setRefreshing(false);
+            }
+        });
+        mSwipeContainer.setColorSchemeResources(
+                R.color.accent,
+                R.color.primary,
+                R.color.primary_dark);
+    }
+
     public void onBackPressed() {
         if (mMaterialSheetFab.isSheetVisible()) {
             mMaterialSheetFab.hideSheet();
