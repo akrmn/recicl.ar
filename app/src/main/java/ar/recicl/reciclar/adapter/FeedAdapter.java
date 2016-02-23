@@ -56,8 +56,9 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ElementViewHol
 
         public void bind(Person person) {
             mCircleImageView.setImageResource(person.getPictureRes());
+            String base = "%s ha entregado 18kg de periódico en el Centro de Reciclaje en Recoleta";
             mTextView.setText(String.format(
-                    "%s ha entregado 18kg de periódico en el Centro de Reciclaje en Recoleta",
+                    base,
                     person.getName()
             ));
         }
@@ -66,9 +67,9 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ElementViewHol
         void onClickCheckStar (View v) {
             checked ^= true;
             if (checked) {
-                mCheckStar.setImageResource(R.drawable.ic_star_black_18dp);
+                mCheckStar.setImageResource(R.drawable.ic_star_black_24dp);
             } else {
-                mCheckStar.setImageResource(R.drawable.ic_star_border_black_18dp);
+                mCheckStar.setImageResource(R.drawable.ic_star_border_black_24dp);
             }
         }
 

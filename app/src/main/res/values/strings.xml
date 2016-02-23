@@ -15,9 +15,6 @@
     <string name="action_profile">Profile</string>
     <string name="fab_sheet_item_recycle">Recycle</string>
     <string name="fab_sheet_item_scan">Scan code</string>
-    <string name="facebook_app_id" translatable="false">429785703877966</string>
-    <string name="twitter_app_key">[VALUE]</string>
-    <string name="twitter_app_secret">[VALUE]</string>
     <string name="title_activity_main" translatable="false">recicl.ar</string>
     <string name="action_logout">Logout</string>
 
@@ -34,4 +31,6 @@
     <string name="label_enter_password">Enter Password</string>
     <string name="label_enter_password_again">Enter Password (Again)</string>
     <string name="hello_world">Welcome to recicl.ar :)</string>
+    <string name="title_activity_register">Register</string>
+    <string name="title_activity_login">Login</string>
 </resources>

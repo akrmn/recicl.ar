@@ -117,7 +117,6 @@ public class Feed extends Base {
     }
 
     private boolean onActionLogoutSelected() {
-        getFirebase().unauth();
         Intent intent = new Intent(this, Welcome.class);
         startActivity(intent);
         finish();

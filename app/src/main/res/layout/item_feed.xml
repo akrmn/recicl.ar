@@ -29,8 +29,8 @@
         android:id="@+id/check_star"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:padding="8dp"
-        android:src="@drawable/ic_star_border_black_18dp"
+        android:padding="12dp"
+        android:src="@drawable/ic_star_border_black_24dp"
         android:background="?android:attr/selectableItemBackground"
         android:foreground="?android:attr/selectableItemBackground" />
 

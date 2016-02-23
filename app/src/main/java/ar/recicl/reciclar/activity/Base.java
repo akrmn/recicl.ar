@@ -15,10 +15,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
-import com.firebase.client.Firebase;
-
 import ar.recicl.reciclar.R;
-import ar.recicl.reciclar.application.Application;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -130,9 +127,5 @@ public abstract class Base extends AppCompatActivity {
         paint.setAntiAlias(true);
 
         return paint;
-    }
-
-    public Firebase getFirebase() {
-        return Application.getFirebase();
     }
 }

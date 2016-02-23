@@ -8,7 +8,7 @@ import ar.recicl.reciclar.R;
 import butterknife.Bind;
 import butterknife.OnClick;
 
-public class Register extends Base {
+public class Login extends Base {
 
     @Bind(R.id.input_email) EditText user_email;
     @Bind(R.id.input_password1) EditText user_password1;
@@ -22,8 +22,8 @@ public class Register extends Base {
     TextInputLayout wrapper_pass2;
 
 
-    public Register() {
-        super(R.layout.activity_register, R.menu.register, R.string.title_activity_register, true);
+    public Login() {
+        super(R.layout.activity_login, R.menu.login, R.string.title_activity_login, true);
     }
 
     @Override
