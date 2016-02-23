@@ -5,12 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import ar.recicl.reciclar.R;
 import ar.recicl.reciclar.data.Person;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ElementViewHolder> {
@@ -42,15 +44,33 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ElementViewHol
 
         @Bind(R.id.circle_image_view) CircleImageView mCircleImageView;
         @Bind(R.id.text_view) TextView mTextView;
+        @Bind(R.id.check_star) ImageView mCheckStar;
+
+        boolean checked;
 
         public ElementViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            checked = false;
         }
 
         public void bind(Person person) {
             mCircleImageView.setImageResource(person.getPictureRes());
-            mTextView.setText(person.getName());
+            mTextView.setText(String.format(
+                    "%s ha entregado 18kg de periódico en el Centro de Reciclaje en Recoleta",
+                    person.getName()
+            ));
         }
+
+        @OnClick(R.id.check_star)
+        void onClickCheckStar (View v) {
+            checked ^= true;
+            if (checked) {
+                mCheckStar.setImageResource(R.drawable.ic_star_black_18dp);
+            } else {
+                mCheckStar.setImageResource(R.drawable.ic_star_border_black_18dp);
+            }
+        }
+
     }
 }
