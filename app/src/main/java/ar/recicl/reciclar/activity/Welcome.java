@@ -31,7 +31,7 @@ public class Welcome extends Base {
     void onButtonLoginClick() {
 //        Intent intent = new Intent(this, Login.class);
 //        startActivity(intent);
-        Intent intent = new Intent(this, Feed.class);
+        Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
 
