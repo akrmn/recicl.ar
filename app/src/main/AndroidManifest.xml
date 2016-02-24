@@ -33,6 +33,9 @@
             android:name=".activity.Login"
             android:parentActivityName=".activity.Welcome"/>
         <activity
+            android:name=".activity.PasswordForgot"
+            android:parentActivityName=".activity.Login"/>
+        <activity
             android:name=".activity.Materials"
             android:label="@string/title_activity_materials"
             android:parentActivityName=".activity.Feed"
