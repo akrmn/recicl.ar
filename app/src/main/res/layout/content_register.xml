@@ -55,6 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                android:fontFamily="sans-serif"
                 android:hint="@string/label_enter_password"/>
         </android.support.design.widget.TextInputLayout>
 
@@ -69,6 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                android:fontFamily="sans-serif"
                 android:hint="@string/label_enter_password_again"/>
         </android.support.design.widget.TextInputLayout>
 

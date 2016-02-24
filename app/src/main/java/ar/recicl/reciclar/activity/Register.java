@@ -1,19 +1,9 @@
 package ar.recicl.reciclar.activity;
 
-
-
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
-import android.view.Gravity;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,25 +18,13 @@ public class Register extends Base {
     private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
     private Matcher matcher;
 
-    public boolean validateEmail(String email) {
-        matcher = pattern.matcher(email);
-        System.out.println(matcher.matches());
-        return matcher.matches();
-    }
-
-
-
     @Bind(R.id.input_email) EditText user_email;
     @Bind(R.id.input_password1) EditText user_password1;
     @Bind(R.id.input_password2) EditText user_password2;
 
-    @Bind(R.id.emailWrapper)
-    TextInputLayout wrapper_email;
-    @Bind(R.id.password1Wrapper)
-    TextInputLayout wrapper_pass1;
-    @Bind(R.id.password2Wrapper)
-    TextInputLayout wrapper_pass2;
-
+    @Bind(R.id.emailWrapper) TextInputLayout wrapper_email;
+    @Bind(R.id.password1Wrapper) TextInputLayout wrapper_pass1;
+    @Bind(R.id.password2Wrapper) TextInputLayout wrapper_pass2;
 
     public Register() {
         super(R.layout.activity_register, R.menu.register, R.string.title_activity_register, true);
@@ -56,8 +34,6 @@ public class Register extends Base {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
-
 
     @OnClick(R.id.button_complete_register)
     void onButtonCompleteRegisterClick() {
@@ -96,5 +72,9 @@ public class Register extends Base {
         finish();
     }
 
-
+    public boolean validateEmail(String email) {
+        matcher = pattern.matcher(email);
+        System.out.println(matcher.matches());
+        return matcher.matches();
+    }
 }

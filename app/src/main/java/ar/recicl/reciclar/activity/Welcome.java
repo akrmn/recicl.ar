@@ -29,7 +29,9 @@ public class Welcome extends Base {
 
     @OnClick(R.id.button_login)
     void onButtonLoginClick() {
-        Intent intent = new Intent(this, Login.class);
+//        Intent intent = new Intent(this, Login.class);
+//        startActivity(intent);
+        Intent intent = new Intent(this, Feed.class);
         startActivity(intent);
     }
 

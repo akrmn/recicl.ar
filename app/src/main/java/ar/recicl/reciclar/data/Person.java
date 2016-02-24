@@ -6,14 +6,13 @@ import java.util.List;
 import java.util.Random;
 
 import ar.recicl.reciclar.R;
+import ar.recicl.reciclar.application.Application;
 
 public class Person {
-    private static Random mRandomGenerator = new Random();
-
     private static List<Person> mPeople = Arrays.asList(
             new Person("Augusto", R.drawable.people_augusto),
             new Person("Brad Pitt", R.drawable.people_brad),
-            new Person("Chapo Guzmán", R.drawable.people_chapo),
+            new Person("El Chapo Guzmán", R.drawable.people_chapo),
             new Person("Muammar Gaddafi", R.drawable.people_gadaffi),
             new Person("Kanye West", R.drawable.people_kanye),
             new Person("Letizia de España", R.drawable.people_leti),
@@ -26,7 +25,7 @@ public class Person {
     );
 
     public static Person anyPerson() {
-        int index = mRandomGenerator.nextInt(mPeople.size());
+        int index = Application.sRandom.nextInt(mPeople.size());
         return mPeople.get(index);
     }
 

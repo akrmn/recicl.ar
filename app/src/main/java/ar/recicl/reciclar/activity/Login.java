@@ -20,6 +20,7 @@ public class Login extends Base {
     TextInputLayout wrapper_pass;
 
 
+
     public Login() {
         super(R.layout.activity_login, R.menu.login, R.string.title_activity_login, true);
     }

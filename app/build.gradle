@@ -39,6 +39,8 @@ dependencies {
 
     compile 'com.yqritc:recyclerview-flexibledivider:1.2.8'
 
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
     compile 'com.gordonwong:material-sheet-fab:1.2.1'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.google.android.gms:play-services-auth:8.4.0'
