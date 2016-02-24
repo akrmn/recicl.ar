@@ -4,10 +4,12 @@ public class RPItem {
 
     private int mPictureRes;
     private String mMessage;
+    private String mId;
 
-    public RPItem(Person person, String base) {
-        mPictureRes = person.getPictureRes();
-        mMessage = String.format(base, person.getName());
+    public RPItem(RecyclingCenter rc, String distance) {
+        mPictureRes = rc.getPictureRes();
+        mMessage = "" + distance + "km. " + rc.getName();
+        mId = rc.getId();
     }
 
     public int getPictureRes() {
@@ -16,5 +18,9 @@ public class RPItem {
 
     public String getMessage() {
         return mMessage;
+    }
+
+    public String getId() {
+        return mId;
     }
 }

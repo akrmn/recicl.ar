@@ -79,12 +79,12 @@ public abstract class Base extends AppCompatActivity {
         }
     }
 
-    protected void showAlert(String heading, String body) {
+    protected void showAlert(int headingResId, int bodyResId) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-        builder.setMessage(body)
-                .setTitle(heading);
-
+        builder.setMessage(bodyResId)
+                .setTitle(headingResId)
+                .setCancelable(false)
+                .setPositiveButton(android.R.string.ok, null);
         builder.create().show();
     }
 

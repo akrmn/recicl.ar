@@ -32,12 +32,14 @@
         android:padding="8dp" >
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_picture_view"
             android:layout_margin="8dp"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:src="@drawable/people_maite" />
 
         <TextView
+            android:id="@+id/user_name_view"
             android:layout_margin="8dp"
             android:textSize="16sp"
             android:layout_width="wrap_content"
@@ -46,6 +48,7 @@
             android:textColor="@color/text_primary_white"/>
 
         <TextView
+            android:id="@+id/user_points_view"
             android:layout_margin="8dp"
             android:textSize="16sp"
             android:layout_width="wrap_content"

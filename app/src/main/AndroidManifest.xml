@@ -4,13 +4,22 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
-    <!--
-         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
-         Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the 'MyLocation' functionality.
-    -->
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <!-- EXTERNAL_STORAGE permissions are optional for Android 6.0 onwards. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
+
+    <permission
+        android:name="com.example.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="com.example.permission.MAPS_RECEIVE"/>
 
     <application
         android:name=".application.Application"
@@ -18,14 +27,15 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key"/>
+
         <activity
             android:name=".activity.Feed"
             android:label="@string/app_name"
-            android:launchMode="singleTop"/>
-        <activity
-            android:name=".activity.Welcome"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme">
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -33,46 +43,39 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.Welcome"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
             android:name=".activity.Register"
-            android:parentActivityName=".activity.Welcome"/>
+            android:parentActivityName=".activity.Welcome"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.PasswordForgot"
-            android:parentActivityName=".activity.Login"/>
+            android:parentActivityName=".activity.Login"
+            android:screenOrientation="portrait"/>
         <activity android:name=".activity.RegisterSuccess"/>
         <activity
             android:name=".activity.Login"
-            android:parentActivityName=".activity.Welcome"/>
-        <activity
-            android:name=".activity.PasswordForgot"
-            android:parentActivityName=".activity.Login"/>
+            android:parentActivityName=".activity.Welcome"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.Materials"
             android:label="@string/title_activity_materials"
             android:parentActivityName=".activity.Feed"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="ar.recicl.reciclar.activity.Feed"/>
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".activity.RecyclingPoints"
             android:label="@string/title_activity_recycling_points"
             android:parentActivityName=".activity.Materials"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.Materials"/>
+            android:screenOrientation="portrait">
         </activity>
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key"/>
-
         <activity
-            android:name=".adapter.Map"
-            android:label="@string/title_activity_map">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.RecyclingPoints"/>
+            android:name=".activity.Map"
+            android:label="@string/title_activity_map"
+            android:parentActivityName=".activity.RecyclingPoints" >
         </activity>
     </application>
 

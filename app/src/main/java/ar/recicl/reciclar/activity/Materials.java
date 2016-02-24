@@ -47,27 +47,20 @@ public class Materials extends Base {
 
     @OnClick(R.id.button_info_glass)
     void onClickGlassInfo() {
-        showAlertDialog(R.string.content_glass);
+        showAlert(R.string.label_glass, R.string.content_glass);
     }
     @OnClick(R.id.button_info_plastic)
     void onClickPlasticInfo() {
-        showAlertDialog(R.string.content_plastic);
+        showAlert(R.string.label_plastic, R.string.content_plastic);
     }
     @OnClick(R.id.button_info_cardboard)
     void onClickCardboardInfo() {
-        showAlertDialog(R.string.content_cardboard);
+        showAlert(R.string.label_cardboard, R.string.content_cardboard);
     }
     @OnClick(R.id.button_info_organic_waste)
     void onClickOrganicWasteInfo() {
-        showAlertDialog(R.string.content_organic_waste);
+        showAlert(R.string.label_organic_waste, R.string.content_organic_waste);
     }
 
-    void showAlertDialog(int textRes) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(textRes)
-                .setCancelable(false)
-                .setPositiveButton(android.R.string.ok, null);
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
+
 }

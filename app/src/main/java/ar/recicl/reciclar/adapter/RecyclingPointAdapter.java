@@ -2,6 +2,7 @@ package ar.recicl.reciclar.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,7 @@ public class RecyclingPointAdapter extends RecyclerView.Adapter<RecyclingPointAd
     }
 
     public void addData(List<RPItem> data) {
+        Log.d("RPAdapter", "EPA" + data.size());
         mData.addAll(0, data);
         if (data.size() > 0) {
             notifyDataSetChanged();
@@ -63,9 +65,12 @@ public class RecyclingPointAdapter extends RecyclerView.Adapter<RecyclingPointAd
 
         RPItem mRPItem;
 
+
+
         public ElementViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(this);
         }
 
         public void bind(RPItem rpItem) {
@@ -77,7 +82,9 @@ public class RecyclingPointAdapter extends RecyclerView.Adapter<RecyclingPointAd
 
         @Override
         public void onClick(View v) {
-
+            if (mOnItemClickListener != null) {
+                mOnItemClickListener.onClick(mRPItem.getId());
+            }
         }
     }
 

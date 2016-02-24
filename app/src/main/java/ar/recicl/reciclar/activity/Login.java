@@ -2,20 +2,26 @@ package ar.recicl.reciclar.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.TextInputLayout;
+import android.view.View;
 import android.widget.EditText;
 
 import ar.recicl.reciclar.R;
+import ar.recicl.reciclar.application.SaveSharedPreference;
+import ar.recicl.reciclar.data.User;
 import butterknife.Bind;
 import butterknife.OnClick;
 
 public class Login extends Base {
 
-    @Bind(R.id.input_email) EditText user_email;
-    @Bind(R.id.input_password) EditText user_password;
+    @Bind(R.id.input_email) EditText mEmailEditText;
+    @Bind(R.id.input_password) EditText mPasswordEditText;
 
-    @Bind(R.id.emailWrapper) TextInputLayout wrapper_email;
-    @Bind(R.id.password1Wrapper) TextInputLayout wrapper_pass;
+    @Bind(R.id.emailWrapper) TextInputLayout mEmailWrapper;
+    @Bind(R.id.password1Wrapper) TextInputLayout mPasswordWrapper;
+
+    private Handler mHandler = new Handler();
 
     public Login() {
         super(R.layout.activity_login, R.menu.login, R.string.title_activity_login, true);
@@ -35,26 +41,36 @@ public class Login extends Base {
     @OnClick(R.id.button_login)
     void onButtonCompleteLoginClick() {
         boolean error = false;
-        wrapper_email.setError(null);
-        wrapper_pass.setError(null);
+        mEmailWrapper.setError(null);
+        mPasswordWrapper.setError(null);
 
-        if(getTextAsString(user_email).equals("")){
-            wrapper_email.setError(getString(R.string.required_field_error));
+        final String email = getTextAsString(mEmailEditText);
+        final String password = getTextAsString(mPasswordEditText);
+
+        if(email.equals("")){
+            mEmailWrapper.setError(getString(R.string.required_field_error));
             error = true;
         }
-        if(getTextAsString(user_password).equals("")){
-            wrapper_pass.setError(getString(R.string.required_field_error));
+        if(password.equals("")){
+            mPasswordWrapper.setError(getString(R.string.required_field_error));
             error = true;
         }
-        if(!validateEmail(getTextAsString(user_email))){
-            wrapper_email.setError(getString(R.string.invalid_mail));
-            error = true;
+        if (!error){
+            setProgressBarVisibility(View.VISIBLE);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    setProgressBarVisibility(View.GONE);
+                    if (User.logIn(email, password)) {
+                        SaveSharedPreference.setUserName(Login.this, email);
+                        Intent intent = new Intent(Login.this, Feed.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        showAlert(R.string.error, R.string.invalid_email_password);
+                    }
+                }
+            }, 1000);
         }
-        if (error){
-            return;
-        }
-        Intent intent = new Intent(this, Feed.class);
-        startActivity(intent);
-        finish();
     }
 }

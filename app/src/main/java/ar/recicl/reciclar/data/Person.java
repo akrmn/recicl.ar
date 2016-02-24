@@ -9,7 +9,7 @@ import ar.recicl.reciclar.R;
 import ar.recicl.reciclar.application.Application;
 
 public class Person {
-    private static List<Person> mPeople = Arrays.asList(
+    private static List<Person> sPeople = Arrays.asList(
             new Person("Augusto", R.drawable.people_augusto),
             new Person("Brad Pitt", R.drawable.people_brad),
             new Person("El Chapo Guzmán", R.drawable.people_chapo),
@@ -25,8 +25,8 @@ public class Person {
     );
 
     public static Person anyPerson() {
-        int index = Application.sRandom.nextInt(mPeople.size());
-        return mPeople.get(index);
+        int index = Application.sRandom.nextInt(sPeople.size());
+        return sPeople.get(index);
     }
 
     private String mName;

@@ -11,6 +11,6 @@
 
     <include layout="@layout/include_toolbar"/>
 
-    <include layout="@layout/content_materiales"/>
+    <include layout="@layout/content_materials"/>
 
 </android.support.design.widget.CoordinatorLayout>

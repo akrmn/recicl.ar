@@ -48,8 +48,17 @@
     <string name="title_activity_recycling_points">Recycling Points</string>
     <string name="label_amount">Amount</string>
     <string name="label_description">Description</string>
+    <string name="content_plastic">Los plásticos suponen una grave amenaza para el medio ambiente por dos motivos principales; su utilización masiva en todo tipo de productos y su lenta degradación. Se estima que tarda unos 180 años en descomponerse aunque este periodo varía en función del tipo de plástico. Los plásticos más comunes que se reciclan, son el PVC y el PET, siendo el primero mucho más contaminante para el medio ambiente.</string>
+    <string name="content_cardboard">El reciclaje de cartón sigue un proceso muy similar al reciclaje de papel, por lo que se puede obtener separando correctamente este material, y depositándolo en los contenedores de color azul. No obstante, no hay que pensar únicamente en la solución rápida y sencilla, que es desprendernos de este material, sino intentar reaprovecharlo siempre que sea posible.</string>
+    <string name="content_organic_waste">El Reciclaje orgánico o de materia orgánica, es aquel en el que la materia a reciclar, proviende de desechos naturales como son los alimentos, hojas, seres vivos o excrementos. Estos restos tienen un proceso natural de descomposición, por lo que rápidamente desaparecen para formar parte de nuevo del ciclo de la vida. Es lo que se conoce como basura orgánica.</string>
+    <string name="content_glass">Si bien la consigna del reciclaje de vidrio no es tan simple como parece porque exige mucha logística (transporte de botellas, cuidados especiales para no romperlas, separación por tipos de botellas o de frascos de vidrio para ordenarlos, etc.), la parte que nos concierne es muy simple: sólo debemos tener la precaución de tirar siempre los vidrios en el contenedor verde que son exclusivos para los envases de vidrio. De este modo, estaremos evitando que los vidrios vayan a parar a los vertederos.</string>
+    <string name="recycler_title">Closest %s recycling points</string>
+    <string name="error">Error</string>
+    <string name="invalid_email_password">Couldn\'t log in due to invalid email-password combination.</string>
+    <plurals name="recypoints">
+        <item quantity="one">%d recypoint</item>
+        <item quantity="other">%d recypoints</item>
+    </plurals>
     <string name="title_activity_map">Map</string>
-    <string name="content_plastic"/>
-    <string name="content_cardboard"/>
-    <string name="content_organic_waste"/>
+    <string name="action_ok">ok</string>
 </resources>

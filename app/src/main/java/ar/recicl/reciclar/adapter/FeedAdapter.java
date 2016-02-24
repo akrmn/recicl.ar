@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.recicl.reciclar.R;
+import ar.recicl.reciclar.activity.Base;
 import ar.recicl.reciclar.data.FeedItem;
 import ar.recicl.reciclar.data.Person;
 import butterknife.Bind;
@@ -80,6 +81,11 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ElementViewHol
         @OnClick(R.id.check_star)
         void onClickCheckStar (View v) {
             setCheckStar(mFeedItem.toggleChecked());
+        }
+
+        @OnClick(R.id.circle_image_view)
+        void onClickCIV() {
+            ((Base) mContext).showSnackbarMessage("Ahora se abre la vista del perfil de " + mFeedItem.getName(), null, null);
         }
 
         void setCheckStar(boolean checked) {
