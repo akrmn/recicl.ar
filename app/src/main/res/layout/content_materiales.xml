@@ -1,128 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activity.Materials"
     tools:showIn="@layout/activity_materials"
     android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginRight="72dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:textSize="24sp"
-        android:text="Seleccione el tipo de material a reciclar"
-        android:textStyle="bold"
-        android:textColor="@color/text_primary_black" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginRight="72dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="16dp"
-        android:textSize="18sp"
-        android:text="Para mayor información sobre cada material, presione el botón a su derecha"
-        android:textColor="@color/text_primary_black" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:orientation="vertical">
 
-        <android.support.v7.widget.AppCompatButton
-            style="@style/ButtonGlass"
-            android:id="@+id/button_glass"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/label_glass"/>
-
-        <ImageView
-            android:id="@+id/button_info_glass"
-            android:layout_margin="8dp"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_info_black_36dp"/>
-    </LinearLayout>
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:textSize="24sp"
+            android:text="@string/label_materials_1"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary_black" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <android.support.v7.widget.AppCompatButton
-            style="@style/ButtonPlastic"
-            android:id="@+id/button_plastic"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/label_plastic"/>
-
-        <ImageView
-            android:id="@+id/button_info_plastic"
-            android:layout_margin="8dp"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_info_black_36dp"/>
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="24dp"
+            android:textSize="18sp"
+            android:text="@string/label_materials_2"
+            android:textColor="@color/text_primary_black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <android.support.v7.widget.AppCompatButton
+                style="@style/ButtonGlass"
+                android:id="@+id/button_glass"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/label_glass"/>
+
+            <ImageView
+                android:id="@+id/button_info_glass"
+                android:layout_margin="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_info_black_36dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:foreground="?android:attr/selectableItemBackground" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <android.support.v7.widget.AppCompatButton
+                style="@style/ButtonPlastic"
+                android:id="@+id/button_plastic"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/label_plastic"/>
+
+            <ImageView
+                android:id="@+id/button_info_plastic"
+                android:layout_margin="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_info_black_36dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:foreground="?android:attr/selectableItemBackground" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <android.support.v7.widget.AppCompatButton
+                style="@style/ButtonCardboard"
+                android:id="@+id/button_cardboard"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/label_cardboard"/>
+
+            <ImageView
+                android:id="@+id/button_info_cardboard"
+                android:layout_margin="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_info_black_36dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:foreground="?android:attr/selectableItemBackground" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <android.support.v7.widget.AppCompatButton
+                style="@style/ButtonOrganicWaste"
+                android:id="@+id/button_organic_waste"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/label_organic_waste"/>
+
+            <ImageView
+                android:id="@+id/button_info_organic_waste"
+                android:layout_margin="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_info_black_36dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:foreground="?android:attr/selectableItemBackground" />
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <android.support.v7.widget.AppCompatButton
-            style="@style/ButtonCardboard"
-            android:id="@+id/button_cardboard"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/label_cardboard"/>
-
-        <ImageView
-            android:id="@+id/button_info_cardboard"
-            android:layout_margin="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_info_black_36dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <android.support.v7.widget.AppCompatButton
-            style="@style/ButtonOrganicWaste"
-            android:id="@+id/button_organic_waste"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="@string/label_organic_waste"/>
-
-        <ImageView
-            android:id="@+id/button_info_organic_waste"
-            android:layout_margin="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_info_black_36dp"/>
-    </LinearLayout>
-
-</LinearLayout>
+</ScrollView>

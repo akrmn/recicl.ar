@@ -5,6 +5,13 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
     <application
         android:name=".application.Application"
         android:allowBackup="true"
@@ -28,6 +35,9 @@
         <activity
             android:name=".activity.Register"
             android:parentActivityName=".activity.Welcome"/>
+        <activity
+            android:name=".activity.PasswordForgot"
+            android:parentActivityName=".activity.Login"/>
         <activity android:name=".activity.RegisterSuccess"/>
         <activity
             android:name=".activity.Login"
@@ -43,6 +53,26 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ar.recicl.reciclar.activity.Feed"/>
+        </activity>
+        <activity
+            android:name=".activity.RecyclingPoints"
+            android:label="@string/title_activity_recycling_points"
+            android:parentActivityName=".activity.Materials"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.Materials"/>
+        </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key"/>
+
+        <activity
+            android:name=".adapter.Map"
+            android:label="@string/title_activity_map">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.RecyclingPoints"/>
         </activity>
     </application>
 

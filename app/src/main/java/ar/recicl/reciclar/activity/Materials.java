@@ -1,5 +1,8 @@
 package ar.recicl.reciclar.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
@@ -7,6 +10,8 @@ import ar.recicl.reciclar.R;
 import butterknife.OnClick;
 
 public class Materials extends Base {
+
+
 
     public Materials() {
         super(R.layout.activity_materials, R.menu.materials, R.string.title_activity_materials, true);
@@ -19,35 +24,50 @@ public class Materials extends Base {
 
     @OnClick(R.id.button_glass)
     void onClickGlass() {
-
+        loadRecyclingPoints(RecyclingPoints.TYPE_GLASS);
     }
     @OnClick(R.id.button_plastic)
     void onClickPlastic() {
-
+        loadRecyclingPoints(RecyclingPoints.TYPE_PLASTIC);
     }
     @OnClick(R.id.button_cardboard)
     void onClickCardboard() {
-
+        loadRecyclingPoints(RecyclingPoints.TYPE_CARDBOARD);
     }
     @OnClick(R.id.button_organic_waste)
     void onClickOrganicWaste() {
+        loadRecyclingPoints(RecyclingPoints.TYPE_ORGANIC);
+    }
 
+    void loadRecyclingPoints(int type) {
+        Intent intent = new Intent(this, RecyclingPoints.class);
+        intent.putExtra("type", type);
+        startActivity(intent);
     }
 
     @OnClick(R.id.button_info_glass)
     void onClickGlassInfo() {
-
+        showAlertDialog(R.string.content_glass);
     }
     @OnClick(R.id.button_info_plastic)
     void onClickPlasticInfo() {
-
+        showAlertDialog(R.string.content_plastic);
     }
     @OnClick(R.id.button_info_cardboard)
     void onClickCardboardInfo() {
-
+        showAlertDialog(R.string.content_cardboard);
     }
     @OnClick(R.id.button_info_organic_waste)
     void onClickOrganicWasteInfo() {
+        showAlertDialog(R.string.content_organic_waste);
+    }
 
+    void showAlertDialog(int textRes) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(textRes)
+                .setCancelable(false)
+                .setPositiveButton(android.R.string.ok, null);
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }

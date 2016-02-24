@@ -31,4 +31,13 @@
     <string name="pass_forgot_message">Por favor, ingresa tu correo. Te enviaremos las instrucicones para establecer una nueva contraseña</string>
     <string name="label_continue">Continuar</string>
     <string name="email_sent">Correo enviado</string>
+    <string name="label_materials_1">Seleccione el tipo de material a reciclar</string>
+    <string name="label_materials_2">Para mayor información sobre cada material, presione el botón a su derecha</string>
+    <string name="label_cardboard">Cartón</string>
+    <string name="label_glass">Vidrio</string>
+    <string name="label_organic_waste">Desechos orgánicos</string>
+    <string name="label_password_forgot">Olvidé mi contraseña…</string>
+    <string name="label_plastic">Plástico</string>
+    <string name="title_activity_materials">Materiales</string>
+    <string name="content_glass">Si bien la consigna del reciclaje de vidrio no es tan simple como parece porque exige mucha logística (transporte de botellas, cuidados especiales para no romperlas, separación por tipos de botellas o de frascos de vidrio para ordenarlos, etc.), la parte que nos concierne es muy simple: sólo debemos tener la precaución de tirar siempre los vidrios en el contenedor verde que son exclusivos para los envases de vidrio. De este modo, estaremos evitando que los vidrios vayan a parar a los vertederos.</string>
 </resources>

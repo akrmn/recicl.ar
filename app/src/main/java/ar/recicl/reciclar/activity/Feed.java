@@ -45,7 +45,6 @@ public class Feed extends Base {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setupToolbar();
         setupFAB();
         setupRecyclerView();
     }
@@ -69,11 +68,6 @@ public class Feed extends Base {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private void setupToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
     }
 
     private void setupFAB() {
