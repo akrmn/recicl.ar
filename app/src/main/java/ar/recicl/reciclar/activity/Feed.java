@@ -133,7 +133,9 @@ public class Feed extends Base {
 
     @OnClick(R.id.fab_sheet_item_recycle)
     void onClickItemRecycle() {
-        showSnackbarMessage("Ahora se abre la vista de reciclar", null, null);
+        mMaterialSheetFab.hideSheet();
+        Intent intent = new Intent(this, Materials.class);
+        startActivity(intent);
     }
 
     @OnClick(R.id.fab_sheet_item_scan)

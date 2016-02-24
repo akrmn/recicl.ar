@@ -27,7 +27,8 @@
         android:layout_gravity="center"
         android:text="@string/welcome_message"
         android:id="@+id/textView2"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:layout_gravity="center"/>
 
     <View
         android:layout_width="match_parent"

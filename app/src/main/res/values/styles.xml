@@ -26,4 +26,28 @@
         <item name="android:textColor">@color/text_primary_black</item>
         <item name="android:drawablePadding">@dimen/sheet_item_image_spacing</item>
     </style>
+
+
+    <style name="MaterialButton" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_primary_white</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:padding">18dp</item>
+    </style>
+
+    <style name="ButtonGlass" parent="MaterialButton">
+        <item name="android:backgroundTint">@color/button_glass</item>
+    </style>
+
+    <style name="ButtonPlastic" parent="MaterialButton">
+        <item name="android:backgroundTint">@color/button_plastic</item>
+    </style>
+
+    <style name="ButtonCardboard" parent="MaterialButton">
+        <item name="android:backgroundTint">@color/button_cardboard</item>
+    </style>
+
+    <style name="ButtonOrganicWaste" parent="MaterialButton">
+        <item name="android:backgroundTint">@color/button_organic_waste</item>
+    </style>
 </resources>

@@ -18,4 +18,9 @@
     <color name="text_primary_black">#DE000000</color>
     <color name="text_secondary_black">#8A000000</color>
     <color name="text_hint_black">#61000000</color>
+
+    <color name="button_glass">#00c853</color>
+    <color name="button_plastic">#fbc02d</color>
+    <color name="button_cardboard">#1565c0</color>
+    <color name="button_organic_waste">#757575</color>
 </resources>
