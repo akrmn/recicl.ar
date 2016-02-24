@@ -51,31 +51,18 @@
             android:layout_below="@id/emailWrapper"
             android:layout_marginTop="4dp">
             <EditText
-                android:id="@+id/input_password1"
+                android:id="@+id/input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:hint="@string/label_enter_password"/>
         </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/password2Wrapper"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/password1Wrapper"
-            android:layout_marginTop="4dp">
-            <EditText
-                android:id="@+id/input_password2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:hint="@string/label_enter_password_again"/>
-        </android.support.design.widget.TextInputLayout>
 
     </RelativeLayout>
 
     <Button
-        android:id="@+id/button_complete_register"
+        android:id="@+id/button_complete_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_login"
@@ -83,16 +70,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/register_message"
-        android:textSize="30sp"
-        android:textColor="#333333"
-        android:layout_marginTop="61dp"
-        android:layout_below="@+id/relativeLayout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+
 
 </RelativeLayout>

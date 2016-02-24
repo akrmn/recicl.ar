@@ -28,5 +28,6 @@
     <string name="unexpected_error">Ups! Error inesperado</string>
     <string name="title_activity_register_success">Registro exitoso!</string>
     <string name="title_activity_register">Registro</string>
-    <string name="title_activity_login"></string>
+    <string name="title_activity_login">Iniciar sesión</string>
+    <string name="login_message">Iniciar sesión</string>
 </resources>

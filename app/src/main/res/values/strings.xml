@@ -2,6 +2,7 @@
     <string name="app_name">recicl.ar</string>
     <string name="welcome_message">Welcome to the amazing world of recycling :)</string>
     <string name="register_message">Create new user</string>
+    <string name="login_message">Log in</string>
 
     <string name="create_user_success">Successfully created user account!</string>
 

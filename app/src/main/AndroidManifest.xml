@@ -29,6 +29,9 @@
             android:name=".activity.Register"
             android:parentActivityName=".activity.Welcome"></activity>
         <activity android:name=".activity.RegisterSuccess"></activity>
+        <activity
+            android:name=".activity.Login"
+            android:parentActivityName=".activity.Welcome"/>
     </application>
 
 </manifest>
