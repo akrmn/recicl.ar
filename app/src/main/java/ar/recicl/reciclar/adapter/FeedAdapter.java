@@ -34,7 +34,9 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ElementViewHol
 
     public void addData(List<FeedItem> data) {
         mData.addAll(0, data);
-        notifyDataSetChanged();
+        if (data.size() > 0) {
+            notifyDataSetChanged();
+        }
     }
 
     @Override

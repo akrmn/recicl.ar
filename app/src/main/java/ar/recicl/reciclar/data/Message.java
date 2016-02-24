@@ -21,16 +21,11 @@ public class Message {
             "%s completó su record de esta semana al reciclar %d cajas de pizza.",
             "%s alcanzó la cantidad de %d botellas de vidrio recicladas en vertederos de Buenos Aires.",
             "%s no finalizó con éxito su meta de recabar %d latas de aluminio.",
-            "%s se unió al reto de Daniel Sarcos y harán campañas publicitarias por el reciclaje en la Argentina.",
-
-            "%s no ha reciclado nada desde hace un mes :("
-            );
+            "%s se unió al reto de Daniel Sarcos y harán campañas publicitarias por el reciclaje en la Argentina."
+    );
 
     public static String anyMessage() {
         int index = Application.sRandom.nextInt(mMessages.size());
-        if (index < 14) {
-            return String.format(mMessages.get(index), "%s", Application.sRandom.nextInt(20) + 2);
-        }
-        return mMessages.get(index);
+        return String.format(mMessages.get(index), "%s", Application.sRandom.nextInt(20) + 2);
     }
 }
