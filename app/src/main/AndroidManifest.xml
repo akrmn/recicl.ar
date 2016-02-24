@@ -27,11 +27,12 @@
         </activity>
         <activity
             android:name=".activity.Register"
-            android:parentActivityName=".activity.Welcome"></activity>
-        <activity android:name=".activity.RegisterSuccess"></activity>
+            android:parentActivityName=".activity.Welcome" />
+        <activity android:name=".activity.RegisterSuccess" />
         <activity
             android:name=".activity.Login"
-            android:parentActivityName=".activity.Welcome"/>
+            android:parentActivityName=".activity.Welcome" />
+        <activity android:name=".activity.PasswordForgot"></activity>
     </application>
 
 </manifest>

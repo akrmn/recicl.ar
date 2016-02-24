@@ -27,4 +27,8 @@
     <string name="title_activity_register">Registro</string>
     <string name="title_activity_login">Iniciar sesión</string>
     <string name="login_message">Iniciar sesión</string>
+    <string name="title_activity_password_forgot">Contraseña olvidada</string>
+    <string name="pass_forgot_message">Por favor, ingresa tu correo. Te enviaremos las instrucicones para establecer una nueva contraseña</string>
+    <string name="label_continue">Continuar</string>
+    <string name="email_sent">Correo enviado</string>
 </resources>

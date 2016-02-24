@@ -21,7 +21,6 @@ public class RegisterSuccess extends Base {
 
     @OnClick(R.id.button_ok)
     void onButtonOkClick() {
-        System.out.println("HOLA PANA");
         Intent intent = new Intent(this, Welcome.class);
         startActivity(intent);
         finish();

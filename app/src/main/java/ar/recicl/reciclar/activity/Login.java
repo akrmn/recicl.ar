@@ -26,6 +26,12 @@ public class Login extends Base {
         super.onCreate(savedInstanceState);
     }
 
+    @OnClick(R.id.pass_forgot)
+    void onTextPassForgotClick() {
+        Intent intent = new Intent(this, PasswordForgot.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.button_login)
     void onButtonCompleteLoginClick() {
         boolean error = false;

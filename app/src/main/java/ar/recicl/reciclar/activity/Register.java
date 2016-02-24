@@ -14,9 +14,6 @@ import butterknife.OnClick;
 
 public class Register extends Base {
 
-    private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
-    private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
-    private Matcher matcher;
 
     @Bind(R.id.input_email) EditText user_email;
     @Bind(R.id.input_password1) EditText user_password1;
@@ -72,9 +69,5 @@ public class Register extends Base {
         finish();
     }
 
-    public boolean validateEmail(String email) {
-        matcher = pattern.matcher(email);
-        System.out.println(matcher.matches());
-        return matcher.matches();
-    }
+
 }

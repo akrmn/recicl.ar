@@ -15,6 +15,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import ar.recicl.reciclar.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -24,6 +27,9 @@ public abstract class Base extends AppCompatActivity {
     private final int mMenuResId;
     private final int mMenuTitleResId;
     private final boolean mMenuBackEnabled;
+    private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
+    private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+    private Matcher matcher;
 
     @Bind(R.id.coordinator_layout) CoordinatorLayout mCoordinatorLayout;
     @Bind(R.id.progress_spinner) ProgressBar mProgressBar;
@@ -118,6 +124,12 @@ public abstract class Base extends AppCompatActivity {
         Snackbar.make(mCoordinatorLayout, messageResId, Snackbar.LENGTH_LONG)
                 .setAction(actionTextResId, action)
                 .show();
+    }
+
+    public boolean validateEmail(String email) {
+        matcher = pattern.matcher(email);
+        System.out.println(matcher.matches());
+        return matcher.matches();
     }
 
     Paint getDividerPaint() {
