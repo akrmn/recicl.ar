@@ -14,12 +14,9 @@ public class Login extends Base {
     @Bind(R.id.input_password1) EditText user_password1;
     @Bind(R.id.input_password2) EditText user_password2;
 
-    @Bind(R.id.emailWrapper)
-    TextInputLayout wrapper_email;
-    @Bind(R.id.password1Wrapper)
-    TextInputLayout wrapper_pass1;
-    @Bind(R.id.password2Wrapper)
-    TextInputLayout wrapper_pass2;
+    @Bind(R.id.emailWrapper) TextInputLayout wrapper_email;
+    @Bind(R.id.password1Wrapper) TextInputLayout wrapper_pass1;
+    @Bind(R.id.password2Wrapper) TextInputLayout wrapper_pass2;
 
 
     public Login() {
