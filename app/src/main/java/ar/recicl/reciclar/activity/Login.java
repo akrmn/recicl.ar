@@ -14,12 +14,8 @@ public class Login extends Base {
     @Bind(R.id.input_email) EditText user_email;
     @Bind(R.id.input_password) EditText user_password;
 
-    @Bind(R.id.emailWrapper)
-    TextInputLayout wrapper_email;
-    @Bind(R.id.password1Wrapper)
-    TextInputLayout wrapper_pass;
-
-
+    @Bind(R.id.emailWrapper) TextInputLayout wrapper_email;
+    @Bind(R.id.password1Wrapper) TextInputLayout wrapper_pass;
 
     public Login() {
         super(R.layout.activity_login, R.menu.login, R.string.title_activity_login, true);
@@ -30,7 +26,7 @@ public class Login extends Base {
         super.onCreate(savedInstanceState);
     }
 
-    @OnClick(R.id.button_complete_login)
+    @OnClick(R.id.button_login)
     void onButtonCompleteLoginClick() {
         boolean error = false;
         wrapper_email.setError(null);

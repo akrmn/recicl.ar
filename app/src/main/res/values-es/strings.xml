@@ -10,9 +10,6 @@
     <string name="label_login">Ingresar</string>
     <string name="divisor_or">o</string>
     <string name="label_email">Email</string>
-    <string name="label_login_with_facebook">Ingresar con Facebook</string>
-    <string name="label_login_with_google">Ingresar con Google</string>
-    <string name="label_login_with_twitter">Ingresar con Twitter</string>
     <string name="label_password">Contraseña</string>
     <string name="label_register">Registrarse</string>
     <string name="label_enter_email">Ingresa Email</string>

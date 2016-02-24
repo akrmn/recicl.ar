@@ -23,9 +23,6 @@
     <string name="label_email">Email</string>
     <string name="label_password">Password</string>
     <string name="divisor_or">or</string>
-    <string name="label_login_with_facebook">Login with Facebook</string>
-    <string name="label_login_with_google">Login with Google</string>
-    <string name="label_login_with_twitter">Login with Twitter</string>
 
     <string name="label_register">Register</string>
     <string name="label_enter_email">Enter Email</string>

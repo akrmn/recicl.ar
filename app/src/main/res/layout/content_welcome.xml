@@ -40,7 +40,7 @@
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
         android:padding="12dp"
-        android:text="Login"/>
+        android:text="@string/label_login"/>
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/button_register"
@@ -49,5 +49,5 @@
         android:layout_marginTop="12dp"
         android:layout_marginBottom="24dp"
         android:padding="12dp"
-        android:text="Register"/>
+        android:text="@string/label_register"/>
 </LinearLayout>

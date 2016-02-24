@@ -35,7 +35,7 @@ public class Register extends Base {
         super.onCreate(savedInstanceState);
     }
 
-    @OnClick(R.id.button_complete_register)
+    @OnClick(R.id.button_register)
     void onButtonCompleteRegisterClick() {
         boolean error = false;
         boolean foo = false;
