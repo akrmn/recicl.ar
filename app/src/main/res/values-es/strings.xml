@@ -26,4 +26,7 @@
     <string name="server_error">Recicl.ar no pudo conectarse al servidor</string>
     <string name="taken_email">El email ingresado no es válido</string>
     <string name="unexpected_error">Ups! Error inesperado</string>
+    <string name="title_activity_register_success">Registro exitoso!</string>
+    <string name="title_activity_register">Registro</string>
+    <string name="title_activity_login"></string>
 </resources>

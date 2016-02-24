@@ -1,14 +1,40 @@
 package ar.recicl.reciclar.activity;
 
+
+
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
+import android.view.Gravity;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ar.recicl.reciclar.R;
 import butterknife.Bind;
 import butterknife.OnClick;
 
 public class Register extends Base {
+
+    private static final String EMAIL_PATTERN = "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$";
+    private Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+    private Matcher matcher;
+
+    public boolean validateEmail(String email) {
+        matcher = pattern.matcher(email);
+        System.out.println(matcher.matches());
+        return matcher.matches();
+    }
+
+
 
     @Bind(R.id.input_email) EditText user_email;
     @Bind(R.id.input_password1) EditText user_password1;
@@ -31,15 +57,19 @@ public class Register extends Base {
         super.onCreate(savedInstanceState);
     }
 
+
+
     @OnClick(R.id.button_complete_register)
     void onButtonCompleteRegisterClick() {
         boolean error = false;
+        boolean foo = false;
         wrapper_email.setError(null);
         wrapper_pass1.setError(null);
         wrapper_pass2.setError(null);
+
         if(getTextAsString(user_email).equals("")){
             wrapper_email.setError(getString(R.string.required_field_error));
-            error = true;
+            foo = true;
         }
         if(getTextAsString(user_password1).equals("")){
             wrapper_pass1.setError(getString(R.string.required_field_error));
@@ -49,12 +79,22 @@ public class Register extends Base {
             wrapper_pass2.setError(getString(R.string.required_field_error));
             error = true;
         }
-        if(!getTextAsString(user_password1).equals(getTextAsString(user_password2))){
+        if(!getTextAsString(user_password1).equals(getTextAsString(user_password2)) && !error){
             wrapper_pass2.setError(getString(R.string.match_pass_error));
             error = true;
         }
-        if (error){
+        if(!validateEmail(getTextAsString(user_email)) && !foo){
+            wrapper_email.setError(getString(R.string.invalid_mail));
+            error = true;
+        }
+        if (error || foo){
             return;
         }
+
+        Intent intent = new Intent(this, RegisterSuccess.class);
+        startActivity(intent);
+        finish();
     }
+
+
 }

@@ -32,5 +32,6 @@
     <string name="label_enter_password_again">Enter Password (Again)</string>
     <string name="hello_world">Welcome to recicl.ar :)</string>
     <string name="title_activity_register">Register</string>
+    <string name="title_activity_register_success">Register success!</string>
     <string name="title_activity_login">Login</string>
 </resources>
