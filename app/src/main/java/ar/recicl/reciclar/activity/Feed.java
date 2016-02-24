@@ -2,6 +2,7 @@ package ar.recicl.reciclar.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,8 +14,15 @@ import android.view.View;
 import com.gordonwong.materialsheetfab.MaterialSheetFab;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ar.recicl.reciclar.R;
 import ar.recicl.reciclar.adapter.FeedAdapter;
+import ar.recicl.reciclar.application.Application;
+import ar.recicl.reciclar.data.FeedItem;
+import ar.recicl.reciclar.data.Message;
+import ar.recicl.reciclar.data.Person;
 import ar.recicl.reciclar.widget.FAB;
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -27,6 +35,7 @@ public class Feed extends Base {
     MaterialSheetFab<FAB> mMaterialSheetFab;
 
     private FeedAdapter mFeedAdapter;
+    private Handler mHandler = new Handler();
 
     public Feed() {
         super(R.layout.activity_feed, R.menu.feed, R.string.app_name, false);
@@ -39,6 +48,13 @@ public class Feed extends Base {
         setupToolbar();
         setupFAB();
         setupRecyclerView();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        mFeedAdapter.addData(makeFeedList(10));
     }
 
     @Override
@@ -83,14 +99,28 @@ public class Feed extends Base {
         mSwipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                // ToDo!!!
-                mSwipeContainer.setRefreshing(false);
+                final int r = Application.sRandom.nextInt(5);
+                mHandler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mFeedAdapter.addData(makeFeedList(r));
+                        mSwipeContainer.setRefreshing(false);
+                    }
+                }, (r+1)*200);
             }
         });
         mSwipeContainer.setColorSchemeResources(
                 R.color.accent,
                 R.color.primary,
                 R.color.primary_dark);
+    }
+
+    private List<FeedItem> makeFeedList(int n) {
+        List<FeedItem> result = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            result.add(new FeedItem(Person.anyPerson(), Message.anyMessage()));
+        }
+        return result;
     }
 
     public void onBackPressed() {
