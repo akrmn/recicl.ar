@@ -46,6 +46,10 @@ public class Login extends Base {
             wrapper_pass.setError(getString(R.string.required_field_error));
             error = true;
         }
+        if(!validateEmail(getTextAsString(user_email))){
+            wrapper_email.setError(getString(R.string.invalid_mail));
+            error = true;
+        }
         if (error){
             return;
         }
