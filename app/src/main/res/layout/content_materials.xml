@@ -10,7 +10,7 @@
     tools:showIn="@layout/activity_materials"
     android:orientation="vertical"
     android:padding="8dp"
-    android:weightSum="5">
+    android:weightSum="8">
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_weight="2"
+        android:layout_weight="3"
         android:weightSum="2">
         <RelativeLayout
             android:id="@+id/button_glass"
@@ -103,7 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_weight="2"
+        android:layout_weight="3"
         android:weightSum="2">
         <RelativeLayout
             android:id="@+id/button_cardboard"
@@ -179,7 +179,7 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:backgroundTint="@color/button_dont_know"
         android:clickable="true"
-        android:layout_weight="1">
+        android:layout_weight="2">
         <ImageView
             android:id="@+id/button_info_dont_know"
             android:layout_width="wrap_content"
