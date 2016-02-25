@@ -56,4 +56,5 @@
     <string name="error">Error</string>
     <string name="invalid_email_password">No se pudo ingresar debido a combinación inválida de email y contraseña.</string>
     <string name="label_dont_know">No sé, ¡ayúdame!</string>
+    <string name="content_dont_know">¿No sabes a qué categoría pertenece lo que deseas reciclar? Pues has llegado al lugar indicado. Responde nuestro cuestionario y rápidamente sabrás cómo reciclar cualquier cosa.</string>
 </resources>
