@@ -65,13 +65,12 @@ public class RecyclingPoints extends Base {
         ));
 
         setupRecyclerView();
+        mRecyclingPointAdapter.addData(makeRPList(Application.sRandom.nextInt(3) + 3));
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
-        mRecyclingPointAdapter.addData(makeRPList(Application.sRandom.nextInt(3) + 3));
     }
 
     private void setupRecyclerView() {
@@ -86,22 +85,25 @@ public class RecyclingPoints extends Base {
 
         mRecyclingPointAdapter.setOnItemClickListener(new RecyclingPointAdapter.OnItemClickListener() {
             @Override
-            public void onClick(String id) {
+            public void onClick(int id) {
                 boolean error = false;
-                if(getTextAsString(mDescriptionEditText).equals("")){
+                if (getTextAsString(mDescriptionEditText).equals("")) {
                     mDescriptionWrapper.setError(getString(R.string.required_field_error));
                     error = true;
                 }
-                if(getTextAsString(mAmountEditText).equals("")){
+                if (getTextAsString(mAmountEditText).equals("")) {
                     mAmountWrapper.setError(getString(R.string.required_field_error));
                     error = true;
                 }
-                if(error) {
+                if (error) {
                     return;
+                } else {
+                    mAmountWrapper.setError(null);
+                    mDescriptionWrapper.setError(null);
+                    Intent intent = new Intent(RecyclingPoints.this, Map.class);
+                    intent.putExtra("id", id);
+                    startActivity(intent);
                 }
-                Intent intent = new Intent(RecyclingPoints.this, Map.class);
-                intent.putExtra("id", id);
-                startActivity(intent);
             }
         });
     }

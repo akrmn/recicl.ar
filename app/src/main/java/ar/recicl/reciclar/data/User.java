@@ -12,11 +12,11 @@ public class User extends Person {
     static {
         sUsers = new HashMap<String, User>();
         sUsers.put("luke.skywalker@death.star",
-                new User("Luke Skywalker", R.drawable.people_luke, "luke.skywalker@death.star", "iamyourfather", 156));
+                new User("Luke Skywalker", R.drawable.small_people_luke, "luke.skywalker@death.star", "iamyourfather", 156));
         sUsers.put("vgibelli@cantv.net",
-                new User("Viviana Gibelli", R.drawable.people_viviana, "vgibelli@cantv.net", "danielsarcos", 8745));
+                new User("Viviana Gibelli", R.drawable.small_people_viviana, "vgibelli@cantv.net", "danielsarcos", 8745));
         sUsers.put("donald@trump.com",
-                new User("Donald Trump", R.drawable.people_trump, "donald@trump.com", "memememe", 20));
+                new User("Donald Trump", R.drawable.small_people_trump, "donald@trump.com", "memememe", 20));
     }
 
     private String mEmail;

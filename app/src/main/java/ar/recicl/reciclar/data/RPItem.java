@@ -4,7 +4,7 @@ public class RPItem {
 
     private int mPictureRes;
     private String mMessage;
-    private String mId;
+    private int mId;
 
     public RPItem(RecyclingCenter rc, String distance) {
         mPictureRes = rc.getPictureRes();
@@ -20,7 +20,7 @@ public class RPItem {
         return mMessage;
     }
 
-    public String getId() {
+    public int getId() {
         return mId;
     }
 }

@@ -44,7 +44,7 @@ public class Map extends Base {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mRecyclingCenter = RecyclingCenter.getRecyclingCenter(getIntent().getStringExtra("id"));
+        mRecyclingCenter = RecyclingCenter.getRecyclingCenter(getIntent().getIntExtra("id", 0));
 
         mMapView.onCreate(savedInstanceState);
 

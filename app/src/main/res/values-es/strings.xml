@@ -52,4 +52,8 @@
         <item quantity="one">%d recipunto</item>
         <item quantity="other">%d recipuntos</item>
     </plurals>
+    <string name="action_ok">ok</string>
+    <string name="error">Error</string>
+    <string name="invalid_email_password">No se pudo ingresar debido a combinación inválida de email y contraseña.</string>
+    <string name="label_dont_know">No sé, ¡ayúdame!</string>
 </resources>

@@ -77,6 +77,7 @@ public class Feed extends Base {
                 .getQuantityString(R.plurals.recypoints, mUser.getPoints(), mUser.getPoints())
         );
 
+        mFeedAdapter.clear();
         mFeedAdapter.addData(makeFeedList(10));
     }
 

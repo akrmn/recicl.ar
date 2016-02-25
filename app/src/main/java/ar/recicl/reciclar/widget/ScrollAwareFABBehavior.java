@@ -13,20 +13,16 @@ public class ScrollAwareFABBehavior extends FloatingActionButton.Behavior {
 
     public ScrollAwareFABBehavior(Context context, AttributeSet attrs) {
         super();
-        Log.e(TAG, "ScrollAwareFABBehavior");
+        Log.v(TAG, "ScrollAwareFABBehavior");
     }
 
     public boolean onStartNestedScroll(CoordinatorLayout parent, FloatingActionButton child, View directTargetChild, View target, int nestedScrollAxes) {
-
         return true;
     }
 
     @Override
     public boolean layoutDependsOn(CoordinatorLayout parent, FloatingActionButton child, View dependency) {
-        if(dependency instanceof RecyclerView)
-            return true;
-
-        return false;
+        return dependency instanceof RecyclerView;
     }
 
     @Override

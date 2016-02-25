@@ -10,18 +10,18 @@ import ar.recicl.reciclar.application.Application;
 
 public class Person {
     private static List<Person> sPeople = Arrays.asList(
-            new Person("Augusto", R.drawable.people_augusto),
-            new Person("Brad Pitt", R.drawable.people_brad),
-            new Person("El Chapo Guzmán", R.drawable.people_chapo),
-            new Person("Muammar Gaddafi", R.drawable.people_gadaffi),
-            new Person("Kanye West", R.drawable.people_kanye),
-            new Person("Letizia de España", R.drawable.people_leti),
-            new Person("Maite Delgado", R.drawable.people_maite),
-            new Person("Bob Marley", R.drawable.people_marley),
-            new Person("Eminem", R.drawable.people_mnm),
-            new Person("Barack Obama", R.drawable.people_obama),
-            new Person("Taylor Swift", R.drawable.people_taytay),
-            new Person("Darth Vader", R.drawable.people_vader)
+            new Person("Augusto", R.drawable.small_people_augusto),
+            new Person("Brad Pitt", R.drawable.small_people_brad),
+            new Person("El Chapo Guzmán", R.drawable.small_people_chapo),
+            new Person("Muammar Gaddafi", R.drawable.small_people_gadaffi),
+            new Person("Kanye West", R.drawable.small_people_kanye),
+            new Person("Letizia de España", R.drawable.small_people_leti),
+            new Person("Maite Delgado", R.drawable.small_people_maite),
+            new Person("Bob Marley", R.drawable.small_people_marley),
+            new Person("Eminem", R.drawable.small_people_mnm),
+            new Person("Barack Obama", R.drawable.small_people_obama),
+            new Person("Taylor Swift", R.drawable.small_people_taytay),
+            new Person("Darth Vader", R.drawable.small_people_vader)
     );
 
     public static Person anyPerson() {

@@ -57,6 +57,11 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ElementViewHol
         return mData.size();
     }
 
+    public void clear() {
+        mData.clear();
+        notifyDataSetChanged();
+    }
+
     public class ElementViewHolder extends RecyclerView.ViewHolder {
 
         @Bind(R.id.circle_image_view) CircleImageView mCircleImageView;

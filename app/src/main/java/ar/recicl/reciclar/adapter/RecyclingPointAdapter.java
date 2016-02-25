@@ -34,7 +34,6 @@ public class RecyclingPointAdapter extends RecyclerView.Adapter<RecyclingPointAd
     }
 
     public void addData(List<RPItem> data) {
-        Log.d("RPAdapter", "EPA" + data.size());
         mData.addAll(0, data);
         if (data.size() > 0) {
             notifyDataSetChanged();
@@ -58,14 +57,17 @@ public class RecyclingPointAdapter extends RecyclerView.Adapter<RecyclingPointAd
         return mData.size();
     }
 
+    public void clear() {
+        mData.clear();
+        notifyDataSetChanged();
+    }
+
     public class ElementViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         @Bind(R.id.circle_image_view) CircleImageView mCircleImageView;
         @Bind(R.id.text_view) TextView mTextView;
 
         RPItem mRPItem;
-
-
 
         public ElementViewHolder(View itemView) {
             super(itemView);
@@ -93,6 +95,6 @@ public class RecyclingPointAdapter extends RecyclerView.Adapter<RecyclingPointAd
     }
 
     public interface OnItemClickListener {
-        void onClick(String id);
+        void onClick(int id);
     }
 }

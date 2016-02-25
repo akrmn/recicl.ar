@@ -9,5 +9,5 @@ public class Application extends android.app.Application {
         super.onCreate();
     }
 
-    public static Random sRandom = new Random();
+    public static final Random sRandom = new Random();
 }

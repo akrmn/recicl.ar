@@ -3,6 +3,7 @@
     <string name="welcome_message">Welcome to the amazing world of recycling :)</string>
     <string name="register_message">Create new user</string>
     <string name="login_message">Log in</string>
+    <string name="google_app_id" translatable="false">744508064852</string>
 
     <string name="create_user_success">Successfully created user account!</string>
     <string name="pass_forgot_message">Please enter your email. We\'ll send you the
@@ -61,4 +62,6 @@
     </plurals>
     <string name="title_activity_map">Map</string>
     <string name="action_ok">ok</string>
+    <string name="label_dont_know">I don\'t know, help me!</string>
+    <string name="content_dont_know">¿No sabes a qué categoría pertenece lo que deseas reciclar? Pues has llegado al lugar indicado. Responde nuestro cuestionario y rápidamente sabrás cómo reciclar cualquier cosa.</string>
 </resources>

@@ -1,17 +1,12 @@
 package ar.recicl.reciclar.activity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 
 import ar.recicl.reciclar.R;
 import butterknife.OnClick;
 
 public class Materials extends Base {
-
-
 
     public Materials() {
         super(R.layout.activity_materials, R.menu.materials, R.string.title_activity_materials, true);
@@ -22,6 +17,11 @@ public class Materials extends Base {
         super.onCreate(savedInstanceState);
     }
 
+
+    @OnClick(R.id.button_dont_know)
+    void onClickDontKnow() {
+        showSnackbarMessage("Ahora se muestra la actividad estilo «Akinator» que ayuda a clasificar", null, null);
+    }
     @OnClick(R.id.button_glass)
     void onClickGlass() {
         loadRecyclingPoints(RecyclingPoints.TYPE_GLASS);
@@ -45,6 +45,10 @@ public class Materials extends Base {
         startActivity(intent);
     }
 
+    @OnClick(R.id.button_info_dont_know)
+    void onClickDontKnowInfo() {
+        showAlert(R.string.label_dont_know, R.string.content_dont_know);
+    }
     @OnClick(R.id.button_info_glass)
     void onClickGlassInfo() {
         showAlert(R.string.label_glass, R.string.content_glass);
