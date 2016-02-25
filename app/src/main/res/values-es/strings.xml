@@ -32,7 +32,7 @@
     <string name="label_continue">Continuar</string>
     <string name="email_sent">Correo enviado</string>
     <string name="label_materials_1">Seleccione el tipo de material a reciclar</string>
-    <string name="label_materials_2">Para mayor información sobre cada material, presione el botón a su derecha</string>
+    <string name="label_materials_2">Para mayor información sobre cada material, presione el ícono de información correspondiente</string>
     <string name="label_cardboard">Cartón</string>
     <string name="label_glass">Vidrio</string>
     <string name="label_organic_waste">Desechos orgánicos</string>

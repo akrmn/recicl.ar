@@ -45,7 +45,7 @@
     <string name="label_plastic">Plastics</string>
     <string name="label_glass">Glass</string>
     <string name="label_materials_1">Pick the type of material you want to recycle</string>
-    <string name="label_materials_2">For more information about each material, tap the button to its right</string>
+    <string name="label_materials_2">For more information about each material, tap the its info icon</string>
     <string name="title_activity_recycling_points">Recycling Points</string>
     <string name="label_amount">Amount</string>
     <string name="label_description">Description</string>

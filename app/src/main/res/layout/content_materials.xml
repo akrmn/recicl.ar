@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,177 +8,197 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activity.Materials"
     tools:showIn="@layout/activity_materials"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:weightSum="5">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:textSize="22sp"
+        android:text="@string/label_materials_1"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary_black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:textSize="16sp"
+        android:text="@string/label_materials_2"
+        android:textColor="@color/text_primary_black" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginRight="80dp"
-            android:layout_marginEnd="80dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:textSize="20sp"
-            android:text="@string/label_materials_1"
-            android:textStyle="bold"
-            android:textColor="@color/text_primary_black" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginRight="80dp"
-            android:layout_marginEnd="80dp"
-            android:layout_marginBottom="16dp"
-            android:textSize="14sp"
-            android:text="@string/label_materials_2"
-            android:textColor="@color/text_primary_black" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <android.support.v7.widget.AppCompatButton
-                style="@style/ButtonDontKnow"
-                android:id="@+id/button_dont_know"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/label_dont_know"/>
-
-            <ImageView
-                android:id="@+id/button_info_dont_know"
-                android:layout_margin="16dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_info_black_36dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:foreground="?android:attr/selectableItemBackground" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <android.support.v7.widget.AppCompatButton
-                style="@style/ButtonGlass"
-                android:id="@+id/button_glass"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/label_glass"/>
-
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:weightSum="2">
+        <RelativeLayout
+            android:id="@+id/button_glass"
+            android:layout_margin="4dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:drawable/btn_default"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:backgroundTint="@color/button_glass"
+            android:clickable="true"
+            android:layout_weight="1">
             <ImageView
                 android:id="@+id/button_info_glass"
-                android:layout_margin="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_info_black_36dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:foreground="?android:attr/selectableItemBackground" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <android.support.v7.widget.AppCompatButton
-                style="@style/ButtonPlastic"
-                android:id="@+id/button_plastic"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:src="@drawable/ic_info_outline_white_24dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:padding="4dp" />
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_plastic"/>
+                android:text="@string/label_glass"
+                android:textColor="@color/text_primary_white"
+                android:textSize="16sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/button_plastic"
+            android:layout_margin="4dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:drawable/btn_default"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:backgroundTint="@color/button_plastic"
+            android:clickable="true"
+            android:layout_weight="1">
             <ImageView
                 android:id="@+id/button_info_plastic"
-                android:layout_margin="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_info_black_36dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:foreground="?android:attr/selectableItemBackground" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <android.support.v7.widget.AppCompatButton
-                style="@style/ButtonCardboard"
-                android:id="@+id/button_cardboard"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:src="@drawable/ic_info_outline_white_24dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:padding="4dp" />
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_cardboard"/>
-
+                android:text="@string/label_plastic"
+                android:textColor="@color/text_primary_white"
+                android:textSize="16sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:weightSum="2">
+        <RelativeLayout
+            android:id="@+id/button_cardboard"
+            android:layout_margin="4dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:drawable/btn_default"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:backgroundTint="@color/button_cardboard"
+            android:clickable="true"
+            android:layout_weight="1">
             <ImageView
                 android:id="@+id/button_info_cardboard"
-                android:layout_margin="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_info_black_36dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:foreground="?android:attr/selectableItemBackground" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <android.support.v7.widget.AppCompatButton
-                style="@style/ButtonOrganicWaste"
-                android:id="@+id/button_organic_waste"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:src="@drawable/ic_info_outline_white_24dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:padding="4dp" />
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/label_organic_waste"/>
+                android:text="@string/label_cardboard"
+                android:textColor="@color/text_primary_white"
+                android:textSize="16sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/button_organic_waste"
+            android:layout_margin="4dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@android:drawable/btn_default"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:backgroundTint="@color/button_organic_waste"
+            android:clickable="true"
+            android:layout_weight="1">
             <ImageView
                 android:id="@+id/button_info_organic_waste"
-                android:layout_margin="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_info_black_36dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:foreground="?android:attr/selectableItemBackground" />
-        </LinearLayout>
+                android:src="@drawable/ic_info_outline_white_24dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:padding="4dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_organic_waste"
+                android:textColor="@color/text_primary_white"
+                android:textSize="16sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
     </LinearLayout>
-</ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/button_dont_know"
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:drawable/btn_default"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:backgroundTint="@color/button_dont_know"
+        android:clickable="true"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/button_info_dont_know"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_info_outline_white_24dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:padding="4dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_dont_know"
+            android:textColor="@color/text_primary_white"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

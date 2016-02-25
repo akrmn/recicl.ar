@@ -2,6 +2,8 @@ package ar.recicl.reciclar.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.widget.Button;
 
 import ar.recicl.reciclar.R;
 import butterknife.OnClick;
@@ -11,12 +13,6 @@ public class Materials extends Base {
     public Materials() {
         super(R.layout.activity_materials, R.menu.materials, R.string.title_activity_materials, true);
     }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
 
     @OnClick(R.id.button_dont_know)
     void onClickDontKnow() {
@@ -65,6 +61,4 @@ public class Materials extends Base {
     void onClickOrganicWasteInfo() {
         showAlert(R.string.label_organic_waste, R.string.content_organic_waste);
     }
-
-
 }
