@@ -64,6 +64,7 @@ public class Login extends Base {
                     if (User.logIn(email, password)) {
                         SaveSharedPreference.setUserName(Login.this, email);
                         Intent intent = new Intent(Login.this, Feed.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                         finish();
                     } else {
