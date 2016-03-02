@@ -3,6 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context=".activity.Feed">
 
     <item
+        android:id="@+id/action_shop"
+        android:title="@string/action_shop"
+        android:orderInCategory="99"
+        android:icon="@drawable/ic_shopping_cart_white_24dp"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/action_profile"
         android:title="@string/action_profile"
         android:orderInCategory="100"

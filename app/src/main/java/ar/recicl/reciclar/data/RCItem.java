@@ -1,12 +1,12 @@
 package ar.recicl.reciclar.data;
 
-public class RPItem {
+public class RCItem {
 
     private int mPictureRes;
     private String mMessage;
     private int mId;
 
-    public RPItem(RecyclingCenter rc, String distance) {
+    public RCItem(RecyclingCenter rc, String distance) {
         mPictureRes = rc.getPictureRes();
         mMessage = "" + distance + "km. " + rc.getName();
         mId = rc.getId();

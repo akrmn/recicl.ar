@@ -29,6 +29,7 @@ import ar.recicl.reciclar.data.Person;
 import ar.recicl.reciclar.data.User;
 import ar.recicl.reciclar.widget.FAB;
 import butterknife.Bind;
+import butterknife.BindString;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -74,25 +75,11 @@ public class Feed extends Base {
         Picasso.with(this).load(mUser.getPictureRes()).into(mUserPictureView);
         mUserNameView.setText(mUser.getName());
         mUserPointsView.setText(getResources()
-                .getQuantityString(R.plurals.recypoints, mUser.getPoints(), mUser.getPoints())
+                        .getQuantityString(R.plurals.recypoints, mUser.getPoints(), mUser.getPoints())
         );
 
         mFeedAdapter.clear();
         mFeedAdapter.addData(makeFeedList(10));
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        switch (item.getItemId()) {
-            case R.id.action_profile:
-                return onActionProfileSelected();
-            case R.id.action_logout:
-                return onActionLogoutSelected();
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     private void setupFAB() {
@@ -125,7 +112,7 @@ public class Feed extends Base {
                         mFeedAdapter.addData(makeFeedList(r));
                         mSwipeContainer.setRefreshing(false);
                     }
-                }, (r+1)*200);
+                }, (r + 1) * 200);
             }
         });
         mSwipeContainer.setColorSchemeResources(
@@ -142,12 +129,47 @@ public class Feed extends Base {
         return result;
     }
 
+    @Override
     public void onBackPressed() {
         if (mMaterialSheetFab.isSheetVisible()) {
             mMaterialSheetFab.hideSheet();
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (item.getItemId()) {
+            case R.id.action_shop:
+                return onActionShopSelected();
+            case R.id.action_profile:
+                return onActionProfileSelected();
+            case R.id.action_logout:
+                return onActionLogoutSelected();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private boolean onActionShopSelected() {
+        showSnackbarMessage("Ahora se abre la vista de compras", null, null);
+        return true;
+    }
+
+    private boolean onActionProfileSelected() {
+        showSnackbarMessage("Ahora se abre la vista del perfil", null, null);
+        return true;
+    }
+
+    private boolean onActionLogoutSelected() {
+        SaveSharedPreference.clearUserName(this);
+        Intent intent = new Intent(this, Welcome.class);
+        startActivity(intent);
+        finish();
+        return true;
     }
 
     @OnClick(R.id.fab_sheet_item_recycle)
@@ -162,21 +184,13 @@ public class Feed extends Base {
         showSnackbarMessage("Ahora se abre la vista de escanear código", null, null);
     }
 
-    @OnClick(R.id.user_picture_view)
+    @OnClick({R.id.user_picture_view, R.id.user_name_view})
     void onClickCIV() {
-        showSnackbarMessage("Ahora se abre la vista del perfil del usuario", null, null);
+        onActionProfileSelected();
     }
 
-    private boolean onActionProfileSelected() {
-        showSnackbarMessage("Ahora se abre la vista del perfil", null, null);
-        return true;
-    }
-
-    private boolean onActionLogoutSelected() {
-        SaveSharedPreference.clearUserName(this);
-        Intent intent = new Intent(this, Welcome.class);
-        startActivity(intent);
-        finish();
-        return true;
+    @OnClick(R.id.user_points_view)
+    void onClickPoints() {
+        onActionShopSelected();
     }
 }

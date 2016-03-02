@@ -12,7 +12,7 @@
 
     <string name="required_field_error">This field is required</string>
     <string name="match_pass_error">The passwords entered does not match</string>
-    <string name="invalid_mail">The email entered is not valid</string>
+    <string name="invalid_email_error">The email entered is not valid</string>
     <string name="taken_email">The email entered is already taken</string>
     <string name="server_error">Recicl.ar can\'t connect to the server</string>
     <string name="unexpected_error">Ups! Unexpected error</string>
@@ -46,7 +46,7 @@
     <string name="label_glass">Glass</string>
     <string name="label_materials_1">Pick the type of material you want to recycle</string>
     <string name="label_materials_2">For more information about each material, tap the its info icon</string>
-    <string name="title_activity_recycling_points">Recycling Points</string>
+    <string name="title_activity_recycling_centers">Recycling Centers</string>
     <string name="label_amount">Amount</string>
     <string name="label_description">Description</string>
     <string name="content_plastic">Los plásticos suponen una grave amenaza para el medio ambiente por dos motivos principales; su utilización masiva en todo tipo de productos y su lenta degradación. Se estima que tarda unos 180 años en descomponerse aunque este periodo varía en función del tipo de plástico. Los plásticos más comunes que se reciclan, son el PVC y el PET, siendo el primero mucho más contaminante para el medio ambiente.</string>
@@ -64,4 +64,5 @@
     <string name="action_ok">ok</string>
     <string name="label_dont_know">I don\'t know, help me!</string>
     <string name="content_dont_know">¿No sabes a qué categoría pertenece lo que deseas reciclar? Pues has llegado al lugar indicado. Responde nuestro cuestionario y rápidamente sabrás cómo reciclar cualquier cosa.</string>
+    <string name="action_shop">Shop</string>
 </resources>

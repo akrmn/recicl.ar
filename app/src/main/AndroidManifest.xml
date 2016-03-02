@@ -67,15 +67,15 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".activity.RecyclingPoints"
-            android:label="@string/title_activity_recycling_points"
+            android:name=".activity.RecyclingCenters"
+            android:label="@string/title_activity_recycling_centers"
             android:parentActivityName=".activity.Materials"
             android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".activity.Map"
             android:label="@string/title_activity_map"
-            android:parentActivityName=".activity.RecyclingPoints" >
+            android:parentActivityName=".activity.RecyclingCenters" >
         </activity>
     </application>
 

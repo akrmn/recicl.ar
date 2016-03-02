@@ -11,6 +11,7 @@ import ar.recicl.reciclar.R;
 import ar.recicl.reciclar.application.SaveSharedPreference;
 import ar.recicl.reciclar.data.User;
 import butterknife.Bind;
+import butterknife.BindString;
 import butterknife.OnClick;
 
 public class Login extends Base {
@@ -20,6 +21,8 @@ public class Login extends Base {
 
     @Bind(R.id.emailWrapper) TextInputLayout mEmailWrapper;
     @Bind(R.id.password1Wrapper) TextInputLayout mPasswordWrapper;
+
+    @BindString(R.string.required_field_error) String mRequiredFieldError;
 
     private Handler mHandler = new Handler();
 
@@ -48,11 +51,11 @@ public class Login extends Base {
         final String password = getTextAsString(mPasswordEditText);
 
         if(email.equals("")){
-            mEmailWrapper.setError(getString(R.string.required_field_error));
+            mEmailWrapper.setError(mRequiredFieldError);
             error = true;
         }
         if(password.equals("")){
-            mPasswordWrapper.setError(getString(R.string.required_field_error));
+            mPasswordWrapper.setError(mRequiredFieldError);
             error = true;
         }
         if (!error){

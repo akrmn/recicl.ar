@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activity.RecyclingPoints"
-    tools:showIn="@layout/activity_recycling_points"
+    tools:context=".activity.RecyclingCenters"
+    tools:showIn="@layout/activity_recycling_centers"
     android:orientation="vertical" >
 
     <android.support.design.widget.TextInputLayout

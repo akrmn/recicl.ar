@@ -1,9 +1,6 @@
 package ar.recicl.reciclar.activity;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.widget.Button;
 
 import ar.recicl.reciclar.R;
 import butterknife.OnClick;
@@ -20,23 +17,23 @@ public class Materials extends Base {
     }
     @OnClick(R.id.button_glass)
     void onClickGlass() {
-        loadRecyclingPoints(RecyclingPoints.TYPE_GLASS);
+        loadRecyclingPoints(RecyclingCenters.TYPE_GLASS);
     }
     @OnClick(R.id.button_plastic)
     void onClickPlastic() {
-        loadRecyclingPoints(RecyclingPoints.TYPE_PLASTIC);
+        loadRecyclingPoints(RecyclingCenters.TYPE_PLASTIC);
     }
     @OnClick(R.id.button_cardboard)
     void onClickCardboard() {
-        loadRecyclingPoints(RecyclingPoints.TYPE_CARDBOARD);
+        loadRecyclingPoints(RecyclingCenters.TYPE_CARDBOARD);
     }
     @OnClick(R.id.button_organic_waste)
     void onClickOrganicWaste() {
-        loadRecyclingPoints(RecyclingPoints.TYPE_ORGANIC);
+        loadRecyclingPoints(RecyclingCenters.TYPE_ORGANIC);
     }
 
     void loadRecyclingPoints(int type) {
-        Intent intent = new Intent(this, RecyclingPoints.class);
+        Intent intent = new Intent(this, RecyclingCenters.class);
         intent.putExtra("type", type);
         startActivity(intent);
     }

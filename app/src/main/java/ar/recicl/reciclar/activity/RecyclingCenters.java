@@ -14,13 +14,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.recicl.reciclar.R;
-import ar.recicl.reciclar.adapter.RecyclingPointAdapter;
+import ar.recicl.reciclar.adapter.RecyclingCenterAdapter;
 import ar.recicl.reciclar.application.Application;
-import ar.recicl.reciclar.data.RPItem;
+import ar.recicl.reciclar.data.RCItem;
 import ar.recicl.reciclar.data.RecyclingCenter;
 import butterknife.Bind;
+import butterknife.BindString;
 
-public class RecyclingPoints extends Base {
+public class RecyclingCenters extends Base {
 
     public static final int TYPE_GLASS = 1;
     public static final int TYPE_PLASTIC = 2;
@@ -33,6 +34,9 @@ public class RecyclingPoints extends Base {
     @Bind(R.id.wrapper_description) TextInputLayout mDescriptionWrapper;
     @Bind(R.id.wrapper_amount) TextInputLayout mAmountWrapper;
 
+    @BindString(R.string.recycler_title) String mRecyclerTitle;
+    @BindString(R.string.required_field_error) String mRequiredFieldError;
+
     private int[] mTitleRess = new int[]{
             0,
             R.string.label_glass,
@@ -42,13 +46,13 @@ public class RecyclingPoints extends Base {
     };
 
     @Bind(R.id.recycler_view) RecyclerView mRecyclerView;
-    @Bind(R.id.recycler_title) TextView mRecyclerTitle;
+    @Bind(R.id.recycler_title) TextView mRecyclerLabel;
 
-    RecyclingPointAdapter mRecyclingPointAdapter;
+    RecyclingCenterAdapter mRecyclingCenterAdapter;
 
-    public RecyclingPoints() {
-        super(R.layout.activity_recycling_points, R.menu.recycling_points,
-                R.string.title_activity_recycling_points, true);
+    public RecyclingCenters() {
+        super(R.layout.activity_recycling_centers, R.menu.recycling_centers,
+                R.string.title_activity_recycling_centers, true);
     }
 
     @Override
@@ -59,13 +63,13 @@ public class RecyclingPoints extends Base {
         if (type == 0) finish();
 
         setTitle(mTitleRess[type]);
-        mRecyclerTitle.setText(String.format(
-                getString(R.string.recycler_title),
+        mRecyclerLabel.setText(String.format(
+                mRecyclerTitle,
                 getString(mTitleRess[type]).toLowerCase()
         ));
 
         setupRecyclerView();
-        mRecyclingPointAdapter.addData(makeRPList(Application.sRandom.nextInt(3) + 3));
+        mRecyclingCenterAdapter.addData(makeRPList(Application.sRandom.nextInt(3) + 3));
     }
 
     @Override
@@ -74,25 +78,25 @@ public class RecyclingPoints extends Base {
     }
 
     private void setupRecyclerView() {
-        mRecyclingPointAdapter = new RecyclingPointAdapter(RecyclingPoints.this);
-        mRecyclerView.setAdapter(mRecyclingPointAdapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(RecyclingPoints.this));
+        mRecyclingCenterAdapter = new RecyclingCenterAdapter(RecyclingCenters.this);
+        mRecyclerView.setAdapter(mRecyclingCenterAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(RecyclingCenters.this));
 
         mRecyclerView.addItemDecoration(new HorizontalDividerItemDecoration.Builder(this)
                 .showLastDivider()
                 .paint(getDividerPaint())
                 .build());
 
-        mRecyclingPointAdapter.setOnItemClickListener(new RecyclingPointAdapter.OnItemClickListener() {
+        mRecyclingCenterAdapter.setOnItemClickListener(new RecyclingCenterAdapter.OnItemClickListener() {
             @Override
             public void onClick(int id) {
                 boolean error = false;
                 if (getTextAsString(mDescriptionEditText).equals("")) {
-                    mDescriptionWrapper.setError(getString(R.string.required_field_error));
+                    mDescriptionWrapper.setError(mRequiredFieldError);
                     error = true;
                 }
                 if (getTextAsString(mAmountEditText).equals("")) {
-                    mAmountWrapper.setError(getString(R.string.required_field_error));
+                    mAmountWrapper.setError(mRequiredFieldError);
                     error = true;
                 }
                 if (error) {
@@ -100,7 +104,7 @@ public class RecyclingPoints extends Base {
                 } else {
                     mAmountWrapper.setError(null);
                     mDescriptionWrapper.setError(null);
-                    Intent intent = new Intent(RecyclingPoints.this, Map.class);
+                    Intent intent = new Intent(RecyclingCenters.this, Map.class);
                     intent.putExtra("id", id);
                     startActivity(intent);
                 }
@@ -108,10 +112,10 @@ public class RecyclingPoints extends Base {
         });
     }
 
-    private List<RPItem> makeRPList(int n) {
-        List<RPItem> result = new ArrayList<>();
+    private List<RCItem> makeRPList(int n) {
+        List<RCItem> result = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            result.add(new RPItem(
+            result.add(new RCItem(
                     RecyclingCenter.anyRecyclingCenter(),
                     ("" + (i+1) + "." + (Application.sRandom.nextInt(99) + 1))
             ));

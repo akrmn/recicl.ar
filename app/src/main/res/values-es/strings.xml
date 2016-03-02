@@ -18,7 +18,7 @@
     <string name="register_message">Crear usuario nuevo</string>
     <string name="required_field_error">Este campo es obligatorio</string>
     <string name="create_user_success">Usuario creado satisfactoriamente</string>
-    <string name="invalid_mail">El email ingresado no es válido</string>
+    <string name="invalid_email_error">El email ingresado no es válido</string>
     <string name="match_pass_error">Las contraseñas ingresadas no coinciden</string>
     <string name="server_error">Recicl.ar no pudo conectarse al servidor</string>
     <string name="taken_email">El email ingresado no es válido</string>
@@ -47,7 +47,7 @@
     <string name="label_amount">Cantidad</string>
     <string name="label_description">Descripción</string>
     <string name="title_activity_map">Mapa</string>
-    <string name="title_activity_recycling_points">Puntos de reciclaje</string>
+    <string name="title_activity_recycling_centers">Centros de reciclaje</string>
     <plurals name="recypoints">
         <item quantity="one">%d recipunto</item>
         <item quantity="other">%d recipuntos</item>
@@ -57,4 +57,5 @@
     <string name="invalid_email_password">No se pudo ingresar debido a combinación inválida de email y contraseña.</string>
     <string name="label_dont_know">No sé, ¡ayúdame!</string>
     <string name="content_dont_know">¿No sabes a qué categoría pertenece lo que deseas reciclar? Pues has llegado al lugar indicado. Responde nuestro cuestionario y rápidamente sabrás cómo reciclar cualquier cosa.</string>
+    <string name="action_shop">Comprar</string>
 </resources>
