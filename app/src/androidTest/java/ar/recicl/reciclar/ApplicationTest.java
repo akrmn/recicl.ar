@@ -1,4 +1,4 @@
-package com.example.carloises.reciclar;
+package ar.recicl.reciclar;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,5 +1,7 @@
 package ar.recicl.reciclar.data;
 
+import android.util.Log;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -37,7 +39,7 @@ public class Person {
 
     public static Person anyPerson() {
         int index = Application.sRandom.nextInt(sPeople.size());
-        return sPeople.get(index);
+        return (Person)sPeople.values().toArray()[index];
     }
 
     public Person(String name, int pictureRes, String email, String password, int points) {
