@@ -17,7 +17,6 @@ import ar.recicl.reciclar.R;
 import ar.recicl.reciclar.activity.Base;
 import ar.recicl.reciclar.activity.Shop;
 import ar.recicl.reciclar.data.SPItem;
-import ar.recicl.reciclar.data.User;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -27,13 +26,11 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ElementViewHol
 
     private Context mContext;
     private List<SPItem> mData;
-    private User mUser;
     private OnItemClickListener mOnItemClickListener;
 
-    public ShopAdapter(Context context, User user) {
+    public ShopAdapter(Context context) {
         mData = new ArrayList<>();
         mContext = context;
-        mUser = user;
     }
 
     public void addData(List<SPItem> data) {
