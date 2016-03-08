@@ -25,7 +25,7 @@
         android:orientation="vertical">
         <TextView
             android:id="@+id/text_name"
-            android:layout_margin="8dp"
+            android:layout_margin="2dp"
             android:textSize="18sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,30 +33,20 @@
             android:textColor="@color/text_primary_black" />
         <TextView
             android:id="@+id/text_description"
-            android:layout_margin="8dp"
+            android:layout_margin="2dp"
             android:textSize="14sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="La mejor manera de llegar a tu trabajo sin contaminar!" />
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/buy_item"
+
+    <TextView
+        android:id="@+id/product_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/text_buy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="@string/label_buy"
-            android:textStyle="normal|bold|italic" />
-        <TextView
-            android:id="@+id/product_price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="750 Rp"/>
-    </LinearLayout>
+        android:padding="5dp"
+        android:text="750 Rp"
+        android:textColor="@color/primary_dark"
+        android:textStyle="italic"/>
 
 </LinearLayout>

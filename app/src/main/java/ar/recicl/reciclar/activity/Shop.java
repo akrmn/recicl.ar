@@ -77,6 +77,10 @@ public class Shop extends Base {
             public void onClick(int id) {
                 SPItem SPitem_act = new SPItem(mSPList[id]);
                 showSnackbarMessage("Comprado " + SPitem_act.getName(), null, null);
+                mPerson.pay(SPitem_act.getPrice());
+                mUserPointsView.setText(getResources()
+                        .getQuantityString(R.plurals.recypoints, mPerson.getPoints(), mPerson.getPoints())
+                );
             }
         });
 
