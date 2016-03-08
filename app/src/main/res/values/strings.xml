@@ -67,4 +67,10 @@
     <string name="label_dont_know">I don\'t know, help me!</string>
     <string name="content_dont_know">¿No sabes a qué categoría pertenece lo que deseas reciclar? Pues has llegado al lugar indicado. Responde nuestro cuestionario y rápidamente sabrás cómo reciclar cualquier cosa.</string>
     <string name="action_shop">Shop</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="label_edit_profile">Edit profile</string>
+    <string name="title_fragment_history">History</string>
+    <string name="title_fragment_friends">Friends</string>
+    <string name="title_fragment_achievements">Achievements</string>
+    <string name="action_edit_profile">Edit profile</string>
 </resources>

@@ -1,5 +1,6 @@
 package ar.recicl.reciclar.activity;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -19,6 +20,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import ar.recicl.reciclar.R;
+import ar.recicl.reciclar.application.SaveSharedPreference;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -108,6 +110,14 @@ public abstract class Base extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    protected boolean onActionLogoutSelected() {
+        SaveSharedPreference.clearUserName(this);
+        Intent intent = new Intent(this, Welcome.class);
+        startActivity(intent);
+        finish();
+        return true;
     }
 
     public void setProgressBarVisibility(int visibility){

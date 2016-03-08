@@ -60,4 +60,10 @@
     <string name="action_shop">Comprar</string>
     <string name="title_activity_shop">Compras</string>
     <string name="label_buy">Comprar</string>
+    <string name="title_fragment_achievements">Logros</string>
+    <string name="title_fragment_friends">Amigos</string>
+    <string name="title_fragment_history">Historial</string>
+    <string name="title_activity_profile">Perfil</string>
+    <string name="section_format"></string>
+    <string name="action_settings"></string>
 </resources>

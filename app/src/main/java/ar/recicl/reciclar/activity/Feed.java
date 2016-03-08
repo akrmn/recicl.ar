@@ -140,8 +140,6 @@ public class Feed extends Base {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
         switch (item.getItemId()) {
             case R.id.action_shop:
                 return onActionShopSelected();
@@ -161,15 +159,8 @@ public class Feed extends Base {
     }
 
     private boolean onActionProfileSelected() {
-        showSnackbarMessage("Ahora se abre la vista del perfil", null, null);
-        return true;
-    }
-
-    private boolean onActionLogoutSelected() {
-        SaveSharedPreference.clearUserName(this);
-        Intent intent = new Intent(this, Welcome.class);
+        Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
-        finish();
         return true;
     }
 
