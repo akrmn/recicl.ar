@@ -27,13 +27,11 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ElementViewHol
 
     private Context mContext;
     private List<SPItem> mData;
-    private User mUser;
     private OnItemClickListener mOnItemClickListener;
 
-    public ShopAdapter(Context context, User user) {
+    public ShopAdapter(Context context) {
         mData = new ArrayList<>();
         mContext = context;
-        mUser = user;
     }
 
     public void addData(List<SPItem> data) {
@@ -77,6 +75,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ElementViewHol
         public ElementViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(this);
         }
 
         public void bind(SPItem SPItem) {
@@ -86,17 +85,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ElementViewHol
             mName.setText(SPItem.getName());
             mDescription.setText(SPItem.getDescription());
             mPrice.setText(price);
-        }
-
-        @OnClick(R.id.buy_item)
-        void onClickBuyItem(View v) {
-            if (mSPItem.getPrice() > mUser.getPoints()) {
-                ((Base) mContext).showSnackbarMessage("No te alcanza menor", null, null);
-            } else {
-                ((Base) mContext).showSnackbarMessage("Comprado!", null, null);
-                mUser.pay(mSPItem.getPrice());
-                ((Base) mContext).recreate();
-            }
         }
 
         @Override

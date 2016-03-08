@@ -35,6 +35,7 @@ public class Shop extends Base {
     @Bind(R.id.user_points_view) TextView mUserPointsView;
     private User mUser;
     ShopAdapter mShopAdapter;
+    ShoppingProduct[] mSPList = ShoppingProduct.getShoppingProductsList();
 
     public Shop() {
         super(R.layout.activity_shop, R.menu.shop, R.string.title_activity_shop, true);
@@ -74,7 +75,8 @@ public class Shop extends Base {
         mShopAdapter.setOnItemClickListener(new ShopAdapter.OnItemClickListener() {
             @Override
             public void onClick(int id) {
-                showSnackbarMessage("Guevo", null, null);
+                SPItem SPitem_act = new SPItem(mSPList[id]);
+                showSnackbarMessage("Comprado " + SPitem_act.getName(), null, null);
             }
         });
 
@@ -82,10 +84,8 @@ public class Shop extends Base {
 
     private List<SPItem> makeSPList(int n) {
         List<SPItem> result = new ArrayList<>();
-        ShoppingProduct[] SPList = ShoppingProduct.getShoppingProductsList();
         for (int i = 0; i < n; i++) {
-            result.add(new SPItem(SPList[i])
-            );
+            result.add(new SPItem(mSPList[i]));
         }
         return result;
     }
