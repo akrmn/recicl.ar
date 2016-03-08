@@ -1,5 +1,7 @@
 package ar.recicl.reciclar.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -76,16 +78,32 @@ public class Shop extends Base {
             @Override
             public void onClick(int id) {
                 SPItem SPitem_act = new SPItem(mSPList[id]);
-                int price = SPitem_act.getPrice();
+                final int price = SPitem_act.getPrice();
                 int user_points = mPerson.getPoints();
+                String name = SPitem_act.getName();
                 if (price > user_points) {
                     showSnackbarMessage("No te alcanza :( ", null, null);
                 } else {
-                    showSnackbarMessage("Comprado " + SPitem_act.getName(), null, null);
-                    mPerson.pay(price);
-                    mUserPointsView.setText(getResources()
-                            .getQuantityString(R.plurals.recypoints, mPerson.getPoints(), mPerson.getPoints())
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Shop.this);
+                    builder.setMessage("Seguro que deseas comprar " +
+                            name + "?"
                     );
+                    builder.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            showSnackbarMessage("Comprado!", null, null);
+                            mPerson.pay(price);
+                            mUserPointsView.setText(getResources()
+                                    .getQuantityString(R.plurals.recypoints, mPerson.getPoints(), mPerson.getPoints())
+                            );
+                        }
+                    });
+                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            return;
+                        }
+                    });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
                 }
             }
         });
