@@ -1,7 +1,6 @@
 package ar.recicl.reciclar.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.recicl.reciclar.R;
-import ar.recicl.reciclar.activity.Base;
-import ar.recicl.reciclar.activity.Shop;
 import ar.recicl.reciclar.data.SPItem;
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ElementViewHolder> {
@@ -92,8 +88,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ElementViewHol
                 mOnItemClickListener.onClick(mSPItem.getId());
             }
         }
-
-
     }
 
     public void setOnItemClickListener(final OnItemClickListener onItemClickListener) {
