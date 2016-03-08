@@ -20,9 +20,9 @@ import ar.recicl.reciclar.adapter.RecyclingCenterAdapter;
 import ar.recicl.reciclar.adapter.ShopAdapter;
 import ar.recicl.reciclar.application.Application;
 import ar.recicl.reciclar.application.SaveSharedPreference;
+import ar.recicl.reciclar.data.Person;
 import ar.recicl.reciclar.data.SPItem;
 import ar.recicl.reciclar.data.ShoppingProduct;
-import ar.recicl.reciclar.data.User;
 import butterknife.Bind;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -33,7 +33,7 @@ public class Shop extends Base {
     @Bind(R.id.user_picture_view) CircleImageView mUserPictureView;
     @Bind(R.id.user_name_view) TextView mUserNameView;
     @Bind(R.id.user_points_view) TextView mUserPointsView;
-    private User mUser;
+    private Person mPerson;
     ShopAdapter mShopAdapter;
     ShoppingProduct[] mSPList = ShoppingProduct.getShoppingProductsList();
 
@@ -45,7 +45,7 @@ public class Shop extends Base {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mUser = User.getUser(SaveSharedPreference.getUserName(this));
+        mPerson = Person.getPerson(SaveSharedPreference.getUserName(this));
         setupRecyclerView();
     }
 
@@ -53,10 +53,10 @@ public class Shop extends Base {
     protected void onResume() {
         super.onResume();
 
-        Picasso.with(this).load(mUser.getPictureRes()).into(mUserPictureView);
-        mUserNameView.setText(mUser.getName());
+        Picasso.with(this).load(mPerson.getPictureRes()).into(mUserPictureView);
+        mUserNameView.setText(mPerson.getName());
         mUserPointsView.setText(getResources()
-                .getQuantityString(R.plurals.recypoints, mUser.getPoints(), mUser.getPoints())
+                .getQuantityString(R.plurals.recypoints, mPerson.getPoints(), mPerson.getPoints())
         );
 
         mShopAdapter.clear();
@@ -64,7 +64,7 @@ public class Shop extends Base {
     }
 
     private void setupRecyclerView() {
-        mShopAdapter = new ShopAdapter(Shop.this, mUser);
+        mShopAdapter = new ShopAdapter(Shop.this);
         mRecyclerView.setAdapter(mShopAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(Shop.this));
 

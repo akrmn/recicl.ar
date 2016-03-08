@@ -17,7 +17,6 @@ import ar.recicl.reciclar.R;
 import ar.recicl.reciclar.activity.Base;
 import ar.recicl.reciclar.activity.Shop;
 import ar.recicl.reciclar.data.SPItem;
-import ar.recicl.reciclar.data.User;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;

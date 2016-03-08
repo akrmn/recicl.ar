@@ -26,10 +26,8 @@ import ar.recicl.reciclar.application.SaveSharedPreference;
 import ar.recicl.reciclar.data.FeedItem;
 import ar.recicl.reciclar.data.Message;
 import ar.recicl.reciclar.data.Person;
-import ar.recicl.reciclar.data.User;
 import ar.recicl.reciclar.widget.FAB;
 import butterknife.Bind;
-import butterknife.BindString;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -45,7 +43,7 @@ public class Feed extends Base {
 
     private FeedAdapter mFeedAdapter;
     private Handler mHandler = new Handler();
-    private User mUser;
+    private Person mPerson;
 
     public Feed() {
         super(R.layout.activity_feed, R.menu.feed, R.string.app_name, false);
@@ -61,7 +59,7 @@ public class Feed extends Base {
             startActivity(intent);
             finish();
         } else {
-            mUser = User.getUser(SaveSharedPreference.getUserName(this));
+            mPerson = Person.getPerson(SaveSharedPreference.getUserName(this));
         }
 
         setupFAB();
@@ -72,10 +70,10 @@ public class Feed extends Base {
     protected void onResume() {
         super.onResume();
 
-        Picasso.with(this).load(mUser.getPictureRes()).into(mUserPictureView);
-        mUserNameView.setText(mUser.getName());
+        Picasso.with(this).load(mPerson.getPictureRes()).into(mUserPictureView);
+        mUserNameView.setText(mPerson.getName());
         mUserPointsView.setText(getResources()
-                        .getQuantityString(R.plurals.recypoints, mUser.getPoints(), mUser.getPoints())
+                        .getQuantityString(R.plurals.recypoints, mPerson.getPoints(), mPerson.getPoints())
         );
 
         mFeedAdapter.clear();

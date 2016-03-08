@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 import ar.recicl.reciclar.R;
 import ar.recicl.reciclar.application.SaveSharedPreference;
-import ar.recicl.reciclar.data.User;
+import ar.recicl.reciclar.data.Person;
 import butterknife.Bind;
 import butterknife.BindString;
 import butterknife.OnClick;
@@ -64,7 +64,7 @@ public class Login extends Base {
                 @Override
                 public void run() {
                     setProgressBarVisibility(View.GONE);
-                    if (User.logIn(email, password)) {
+                    if (Person.logIn(email, password)) {
                         SaveSharedPreference.setUserName(Login.this, email);
                         Intent intent = new Intent(Login.this, Feed.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
