@@ -36,6 +36,7 @@
     <string name="label_enter_password_again">Enter Password (Again)</string>
     <string name="hello_world">Welcome to recicl.ar :)</string>
     <string name="title_activity_register">Register</string>
+    <string name="title_activity_shop">Shop</string>
     <string name="title_activity_register_success">Register success!</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_password_forgot">Forgotten Password</string>
@@ -49,6 +50,7 @@
     <string name="title_activity_recycling_centers">Recycling Centers</string>
     <string name="label_amount">Amount</string>
     <string name="label_description">Description</string>
+    <string name="label_buy">Buy</string>
     <string name="content_plastic">Los plásticos suponen una grave amenaza para el medio ambiente por dos motivos principales; su utilización masiva en todo tipo de productos y su lenta degradación. Se estima que tarda unos 180 años en descomponerse aunque este periodo varía en función del tipo de plástico. Los plásticos más comunes que se reciclan, son el PVC y el PET, siendo el primero mucho más contaminante para el medio ambiente.</string>
     <string name="content_cardboard">El reciclaje de cartón sigue un proceso muy similar al reciclaje de papel, por lo que se puede obtener separando correctamente este material, y depositándolo en los contenedores de color azul. No obstante, no hay que pensar únicamente en la solución rápida y sencilla, que es desprendernos de este material, sino intentar reaprovecharlo siempre que sea posible.</string>
     <string name="content_organic_waste">El Reciclaje orgánico o de materia orgánica, es aquel en el que la materia a reciclar, proviende de desechos naturales como son los alimentos, hojas, seres vivos o excrementos. Estos restos tienen un proceso natural de descomposición, por lo que rápidamente desaparecen para formar parte de nuevo del ciclo de la vida. Es lo que se conoce como basura orgánica.</string>

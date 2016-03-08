@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circle_image_view"
+        android:layout_margin="8dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@drawable/people_obama" />
+
+    <LinearLayout
+        android:layout_margin="8dp"
+        android:textSize="14sp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_margin="8dp"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bicicleta ecologica"
+            android:textColor="@color/text_primary_black" />
+        <TextView
+            android:id="@+id/text_description"
+            android:layout_margin="8dp"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="La mejor manera de llegar a tu trabajo sin contaminar!" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/buy_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="?android:attr/selectableItemBackground"
+        android:foreground="?android:attr/selectableItemBackground">
+        <TextView
+            android:id="@+id/text_buy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/label_buy"
+            android:textStyle="normal|bold|italic" />
+        <TextView
+            android:id="@+id/product_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="750 Rp"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -155,7 +155,8 @@ public class Feed extends Base {
     }
 
     private boolean onActionShopSelected() {
-        showSnackbarMessage("Ahora se abre la vista de compras", null, null);
+        Intent intent = new Intent(this, Shop.class);
+        startActivity(intent);
         return true;
     }
 

@@ -58,4 +58,6 @@
     <string name="label_dont_know">No sé, ¡ayúdame!</string>
     <string name="content_dont_know">¿No sabes a qué categoría pertenece lo que deseas reciclar? Pues has llegado al lugar indicado. Responde nuestro cuestionario y rápidamente sabrás cómo reciclar cualquier cosa.</string>
     <string name="action_shop">Comprar</string>
+    <string name="title_activity_shop">Compras</string>
+    <string name="label_buy">Comprar</string>
 </resources>

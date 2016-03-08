@@ -16,7 +16,7 @@ public class User extends Person {
         sUsers.put("vgibelli@cantv.net",
                 new User("Viviana Gibelli", R.drawable.small_people_viviana, "vgibelli@cantv.net", "danielsarcos", 8745));
         sUsers.put("donald@trump.com",
-                new User("Donald Trump", R.drawable.small_people_trump, "donald@trump.com", "memememe", 20));
+                new User("Donald Trump", R.drawable.small_people_trump, "donald@trump.com", "memememe", 200000));
     }
 
     private String mEmail;
@@ -33,6 +33,8 @@ public class User extends Person {
     public int getPoints() {
         return mPoints;
     }
+
+    public void pay(int points) { mPoints = mPoints - points; }
 
     public String getEmail() {
         return mEmail;
