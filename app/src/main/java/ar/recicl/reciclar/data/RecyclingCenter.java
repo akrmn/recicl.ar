@@ -1,17 +1,11 @@
 package ar.recicl.reciclar.data;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import ar.recicl.reciclar.R;
 import ar.recicl.reciclar.application.Application;
 
 public class RecyclingCenter {
-//    private static final Map<int, RecyclingCenter> sCenters;
 
-    private static final RecyclingCenter[] sCenters = new RecyclingCenter[]{
+    public static final RecyclingCenter[] sCenters = new RecyclingCenter[]{
             new RecyclingCenter(0, "Centro de Reciclaje de Recoleta, Recoleta", R.drawable.small_rp_0,
                     "Teodoro García 3367, Ciudad Autónoma de Buenos Aires", -34.5789762,-58.4536974),
             new RecyclingCenter(1, "Punto de Reciclaje «Augusto Pinochet», Puerto Madero", R.drawable.small_rp_1,
@@ -29,11 +23,6 @@ public class RecyclingCenter {
     };
 
     public static RecyclingCenter getRecyclingCenter(int index) {
-        return sCenters[index];
-    }
-
-    public static RecyclingCenter anyRecyclingCenter() {
-        int index = Application.sRandom.nextInt(sCenters.length);
         return sCenters[index];
     }
 
@@ -60,10 +49,6 @@ public class RecyclingCenter {
 
     public int getPictureRes() {
         return mPictureRes;
-    }
-
-    public void setPictureRes(int pictureRes) {
-        mPictureRes = pictureRes;
     }
 
     public int getId() {

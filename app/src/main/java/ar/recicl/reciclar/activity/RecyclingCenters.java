@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import ar.recicl.reciclar.R;
@@ -114,9 +116,13 @@ public class RecyclingCenters extends Base {
 
     private List<RCItem> makeRPList(int n) {
         List<RCItem> result = new ArrayList<>();
+
+        List<RecyclingCenter> centers = Arrays.asList(RecyclingCenter.sCenters);
+        Collections.shuffle(centers);
+
         for (int i = 0; i < n; i++) {
             result.add(new RCItem(
-                    RecyclingCenter.anyRecyclingCenter(),
+                    centers.get(i),
                     ("" + (i+1) + "." + (Application.sRandom.nextInt(99) + 1))
             ));
         }
