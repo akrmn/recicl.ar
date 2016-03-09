@@ -39,7 +39,7 @@ public class QRscanner extends Base implements QRCodeReaderView.OnQRCodeReadList
                 foo = 2;
                 AlertDialog.Builder builder = new AlertDialog.Builder(QRscanner.this);
                 builder.setTitle("Reciclaje exitoso");
-                builder.setMessage("Felicidades! Por tu reciclaje acabas de recibir 50 recipuntos!");
+                builder.setMessage("¡Felicidades! ¡Por tu reciclaje acabas de recibir 50 recipuntos!");
                 builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         mPerson.receivePoints(50);
