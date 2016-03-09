@@ -171,6 +171,7 @@ public class Feed extends Base {
 
     @OnClick(R.id.fab_sheet_item_scan)
     void onClickItemScan() {
+        mMaterialSheetFab.hideSheet();
         Intent intent = new Intent(this, QRscanner.class);
         startActivity(intent);
     }

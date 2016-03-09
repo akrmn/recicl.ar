@@ -75,4 +75,15 @@
     <string name="title_fragment_friends">Friends</string>
     <string name="title_fragment_achievements">Achievements</string>
     <string name="action_edit_profile">Edit profile</string>
+    <string name="recycle_success_title">Recycling success</string>
+    <string name="recycle_failure_title">Recycling failure</string>
+    <string name="recycle_failure_message">We\'re sorry, we haven\'t been able to verify the scanned code.</string>
+    <string name="try_again_button">Try again</string>
+    <string name="exit_button">Exit</string>
+    <string name="error_camera_not_found">Camera not found</string>
+
+    <plurals name="recycle_success_message">
+        <item quantity="one">Congratulations! You have just earned %d recypoint!</item>
+        <item quantity="other">Congratulations! You have just earned %d recypoints!</item>
+    </plurals>
 </resources>

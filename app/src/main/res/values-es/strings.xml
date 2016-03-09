@@ -70,4 +70,11 @@
     <string name="label_edit_profile">Editar perfil</string>
     <string name="title_activity_qrscanner">Escanear código QR</string>
     <string name="label_qr">Por favor, escanea el código QR que se muestra en la máquina de reciclar</string>
+    <string name="error_camera_not_found">Cámara no encontrada</string>
+    <string name="exit_button">Salir</string>
+    <string name="recycle_failure_message">Disculpe, no hemos podido reconocer el código escaneado.</string>
+    <string name="recycle_failure_title">Reciclaje fallido</string>
+    <string name="try_again_button">Intentar nuevamente</string>
+    <string name="recycle_success_message">¡Felicidades! ¡Por tu reciclaje acabas de recibir 50 recipuntos!</string>
+    <string name="recycle_success_title">Reciclaje exitoso</string>
 </resources>

@@ -10,7 +10,6 @@
     tools:showIn="@layout/activity_qrscanner"
     android:orientation="vertical" >
 
-
     <TextView
         android:gravity="center"
         android:id="@+id/location_text_view"
