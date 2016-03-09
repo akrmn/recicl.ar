@@ -171,7 +171,8 @@ public class Feed extends Base {
 
     @OnClick(R.id.fab_sheet_item_scan)
     void onClickItemScan() {
-        showSnackbarMessage("Ahora se abre la vista de escanear código", null, null);
+        Intent intent = new Intent(this, QRscanner.class);
+        startActivity(intent);
     }
 
     @OnClick({R.id.user_picture_view, R.id.user_name_view})

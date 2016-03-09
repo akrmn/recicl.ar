@@ -29,6 +29,7 @@
     <string name="label_password_forgot">Forgot my password…</string>
     <string name="divisor_or">or</string>
 
+    <string name="label_qr">Please, scan the QR code in the recycling machine</string>
     <string name="label_continue">Continue</string>
     <string name="label_register">Register</string>
     <string name="label_enter_email">Enter Email</string>
@@ -36,6 +37,7 @@
     <string name="label_enter_password_again">Enter Password (Again)</string>
     <string name="hello_world">Welcome to recicl.ar :)</string>
     <string name="title_activity_register">Register</string>
+    <string name="title_activity_qrscanner">QR code scan</string>
     <string name="title_activity_shop">Shop</string>
     <string name="title_activity_register_success">Register success!</string>
     <string name="title_activity_login">Login</string>

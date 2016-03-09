@@ -68,6 +68,8 @@ public class Person {
 
     public void pay(int points) { mPoints = mPoints - points; }
 
+    public void receivePoints(int points) {mPoints = mPoints + points;}
+
     public static boolean logIn(String email, String password) {
         return sPeople.containsKey(email) && sPeople.get(email).getPassword().equals(password);
     }

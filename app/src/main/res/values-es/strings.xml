@@ -66,4 +66,8 @@
     <string name="title_activity_profile">Perfil</string>
     <string name="section_format"></string>
     <string name="action_settings"></string>
+    <string name="action_edit_profile">Editar perfil</string>
+    <string name="label_edit_profile">Editar perfil</string>
+    <string name="title_activity_qrscanner">Escanear código QR</string>
+    <string name="label_qr">Por favor, escanea el código QR que se muestra en la máquina de reciclar</string>
 </resources>
