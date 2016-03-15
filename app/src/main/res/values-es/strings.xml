@@ -77,4 +77,16 @@
     <string name="try_again_button">Intentar nuevamente</string>
     <string name="recycle_success_message">¡Felicidades! ¡Por tu reciclaje acabas de recibir 50 recipuntos!</string>
     <string name="recycle_success_title">Reciclaje exitoso</string>
+    <string name="history_item_message_1">Dos botellas de plástico</string>
+    <string name="history_item_message_10">Siete botellas de vino</string>
+    <string name="history_item_message_11">Seis recipientes de vidrio</string>
+    <string name="history_item_message_12">Cuatro paquetes de papel viejo</string>
+    <string name="history_item_message_2">Tres latas de aluminio</string>
+    <string name="history_item_message_3">Una botella de vidrio</string>
+    <string name="history_item_message_4">Cinco cajas de cartón</string>
+    <string name="history_item_message_5">Ocho patitos de plástico</string>
+    <string name="history_item_message_6">3kg de desechos orgánicos</string>
+    <string name="history_item_message_7">Diez botellas de plástico</string>
+    <string name="history_item_message_8">Cinco cuadernos usados</string>
+    <string name="history_item_message_9">4kg de periódico</string>
 </resources>

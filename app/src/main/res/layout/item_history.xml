@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground">
+
+    <TextView
+        android:id="@+id/points_view"
+        android:layout_margin="8dp"
+        android:textSize="16sp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:text="+50 rps"
+        android:textStyle="italic"
+        android:textColor="@color/primary"/>
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_margin="8dp"
+        android:textSize="14sp"
+        android:layout_width="0dp"
+        android:layout_weight="4"
+        android:layout_height="wrap_content"
+        android:text="Taylor Swift ha entregado 18kg de periódico en el Centro de Reciclaje en Recoleta"
+        android:textColor="@color/text_primary_black"/>
+
+</LinearLayout>

@@ -14,7 +14,7 @@ public class ShoppingProduct {
                     2150, "Aprendé sencillas recetas veganas. ¡Cualquiera puede ser vegano!"),
             new ShoppingProduct(4, "Recipiente de composta para jardín", R.drawable.shopping_compost_bin,
                     3500, "¡Comenzá ya mismo a producir tu propia composta!"),
-            new ShoppingProduct(5, "Camiseta con temática «Salva tu planeta»", R.drawable.shopping_tshirt,
+            new ShoppingProduct(5, "Camiseta con temática «Salvá tu planeta»", R.drawable.shopping_tshirt,
                     4900, "¡Para promover la consciencia ecológica con tus amigos!"),
             new ShoppingProduct(6, "Medidor de tiempo para la ducha", R.drawable.shopping_shower_timer,
                     8750, "Ahorrá agua al momento de ducharte con este producto."),

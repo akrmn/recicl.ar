@@ -94,11 +94,16 @@ public class Feed extends Base {
         mFeedAdapter = new FeedAdapter(Feed.this);
         mRecyclerView.setAdapter(mFeedAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(Feed.this));
+        mFeedAdapter.setOnItemClickListener(new FeedAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(String id) {
+                Intent intent = new Intent(Feed.this, Profile.class);
+                intent.putExtra("personId", id);
+                startActivity(intent);
+            }
+        });
 
-        mRecyclerView.addItemDecoration(new HorizontalDividerItemDecoration.Builder(this)
-                .showLastDivider()
-                .paint(getDividerPaint())
-                .build());
+        mRecyclerView.addItemDecoration(getHorizontalDivider());
 
         mSwipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -158,6 +163,7 @@ public class Feed extends Base {
 
     private boolean onActionProfileSelected() {
         Intent intent = new Intent(this, Profile.class);
+        intent.putExtra("personId", mPerson.getEmail());
         startActivity(intent);
         return true;
     }

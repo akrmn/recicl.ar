@@ -1,5 +1,6 @@
 package ar.recicl.reciclar.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+
+import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -142,12 +145,19 @@ public abstract class Base extends AppCompatActivity {
         return matcher.matches();
     }
 
-    Paint getDividerPaint() {
+    public HorizontalDividerItemDecoration getHorizontalDivider() {
+        return getHorizontalDivider(this);
+    }
+
+    public static HorizontalDividerItemDecoration getHorizontalDivider(Context context) {
         Paint paint = new Paint();
         paint.setStrokeWidth(1);
-        paint.setColor(ContextCompat.getColor(this, R.color.lineBreak));
+        paint.setColor(ContextCompat.getColor(context, R.color.lineBreak));
         paint.setAntiAlias(true);
 
-        return paint;
+        return new HorizontalDividerItemDecoration.Builder(context)
+                .showLastDivider()
+                .paint(paint)
+                .build();
     }
 }

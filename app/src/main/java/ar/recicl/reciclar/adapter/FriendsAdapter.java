@@ -10,40 +10,51 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import ar.recicl.reciclar.R;
-import ar.recicl.reciclar.data.SPItem;
+import ar.recicl.reciclar.data.Person;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ElementViewHolder> {
+public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ElementViewHolder> {
     private Context mContext;
-    private List<SPItem> mData;
+    private List<Person> mData;
     private OnItemClickListener mOnItemClickListener;
 
-    public ShopAdapter(Context context) {
-        mData = new ArrayList<>();
+    public FriendsAdapter(Context context, String currentPersonId) {
         mContext = context;
+
+        createData();
+
+        mData.remove(Person.getPerson(currentPersonId));
     }
 
-    public void addData(List<SPItem> data) {
-        mData.addAll(0, data);
-        if (data.size() > 0) {
-            notifyDataSetChanged();
-        }
+    private void createData() {
+        mData = new ArrayList<>();
+        mData.addAll(Person.getAllPeople());
+
+        Collections.sort(mData, new Comparator<Person>() {
+            @Override
+            public int compare(Person lhs, Person rhs) {
+                return lhs.getName().compareTo(rhs.getName());
+            }
+        });
     }
 
     @Override
-    public ShopAdapter.ElementViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public FriendsAdapter.ElementViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_shopping_product, parent, false);
+                .inflate(R.layout.item_basic, parent, false);
         return new ElementViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ShopAdapter.ElementViewHolder holder, int position) {
+    public void onBindViewHolder(FriendsAdapter.ElementViewHolder holder, int position) {
         holder.bind(mData.get(position));
     }
 
@@ -60,11 +71,9 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ElementViewHol
     public class ElementViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         @Bind(R.id.circle_image_view) CircleImageView mCircleImageView;
-        @Bind(R.id.text_name) TextView mName;
-        @Bind(R.id.text_description) TextView mDescription;
-        @Bind(R.id.product_price) TextView mPrice;
+        @Bind(R.id.text_view) TextView mTextView;
 
-        SPItem mSPItem;
+        Person mPerson;
 
         public ElementViewHolder(View itemView) {
             super(itemView);
@@ -72,19 +81,17 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ElementViewHol
             itemView.setOnClickListener(this);
         }
 
-        public void bind(SPItem SPItem) {
-            String price = SPItem.getPrice() + " rps";
-            mSPItem = SPItem;
-            Picasso.with(mContext).load(SPItem.getPictureRes()).into(mCircleImageView);
-            mName.setText(SPItem.getName());
-            mDescription.setText(SPItem.getDescription());
-            mPrice.setText(price);
+        public void bind(Person person) {
+            mPerson = person;
+
+            Picasso.with(mContext).load(person.getPictureRes()).into(mCircleImageView);
+            mTextView.setText(person.getName());
         }
 
         @Override
         public void onClick(View v) {
             if (mOnItemClickListener != null) {
-                mOnItemClickListener.onClick(mSPItem.getId());
+                mOnItemClickListener.onClick(mPerson.getEmail());
             }
         }
     }
@@ -94,6 +101,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ElementViewHol
     }
 
     public interface OnItemClickListener {
-        void onClick(int id);
+        void onClick(String id);
     }
 }
