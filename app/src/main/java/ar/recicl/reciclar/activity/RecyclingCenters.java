@@ -84,10 +84,7 @@ public class RecyclingCenters extends Base {
         mRecyclerView.setAdapter(mRecyclingCenterAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(RecyclingCenters.this));
 
-        mRecyclerView.addItemDecoration(new HorizontalDividerItemDecoration.Builder(this)
-                .showLastDivider()
-                .paint(getDividerPaint())
-                .build());
+        mRecyclerView.addItemDecoration(getHorizontalDivider());
 
         mRecyclingCenterAdapter.setOnItemClickListener(new RecyclingCenterAdapter.OnItemClickListener() {
             @Override

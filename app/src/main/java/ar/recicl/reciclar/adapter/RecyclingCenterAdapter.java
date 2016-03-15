@@ -16,7 +16,6 @@ import ar.recicl.reciclar.R;
 import ar.recicl.reciclar.data.RCItem;
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecyclingCenterAdapter extends RecyclerView.Adapter<RecyclingCenterAdapter.ElementViewHolder> {
@@ -40,7 +39,7 @@ public class RecyclingCenterAdapter extends RecyclerView.Adapter<RecyclingCenter
     @Override
     public RecyclingCenterAdapter.ElementViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_recycling_point, parent, false);
+                .inflate(R.layout.item_basic, parent, false);
         return new ElementViewHolder(view);
     }
 

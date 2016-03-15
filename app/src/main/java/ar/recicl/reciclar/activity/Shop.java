@@ -65,10 +65,7 @@ public class Shop extends Base {
         mRecyclerView.setAdapter(mShopAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(Shop.this));
 
-        mRecyclerView.addItemDecoration(new HorizontalDividerItemDecoration.Builder(this)
-                .showLastDivider()
-                .paint(getDividerPaint())
-                .build());
+        mRecyclerView.addItemDecoration(getHorizontalDivider());
         mShopAdapter.setOnItemClickListener(new ShopAdapter.OnItemClickListener() {
             @Override
             public void onClick(int id) {

@@ -92,4 +92,16 @@
         <item quantity="one">Congratulations! You have just earned %d recypoint!</item>
         <item quantity="other">Congratulations! You have just earned %d recypoints!</item>
     </plurals>
+    <string name="history_item_message_1">Two plastic bottles</string>
+    <string name="history_item_message_10">Seven bottles of wine</string>
+    <string name="history_item_message_11">Six pieces of glassware</string>
+    <string name="history_item_message_12">Four bundles of old paper</string>
+    <string name="history_item_message_2">Three aluminium cans</string>
+    <string name="history_item_message_3">One glass bottle</string>
+    <string name="history_item_message_4">Five cardboard boxes</string>
+    <string name="history_item_message_5">Eight rubber duckies</string>
+    <string name="history_item_message_6">3kg of organic waste</string>
+    <string name="history_item_message_7">Ten plastic bottles</string>
+    <string name="history_item_message_8">Five used notebooks</string>
+    <string name="history_item_message_9">4kg of newspaper</string>
 </resources>

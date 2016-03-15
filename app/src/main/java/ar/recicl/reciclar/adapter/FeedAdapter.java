@@ -24,9 +24,9 @@ import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ElementViewHolder> {
-
     private Context mContext;
     private List<FeedItem> mData;
+    private OnItemClickListener mOnItemClickListener;
 
     public FeedAdapter(Context context) {
         mData = new ArrayList<>();
@@ -90,7 +90,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ElementViewHol
 
         @OnClick(R.id.circle_image_view)
         void onClickCIV() {
-            ((Base) mContext).showSnackbarMessage("Ahora se abre la vista del perfil de " + mFeedItem.getName(), null, null);
+            mOnItemClickListener.onClick(mFeedItem.getEmail());
         }
 
         void setCheckStar(boolean checked) {
@@ -100,5 +100,13 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ElementViewHol
                 mCheckStar.setImageResource(R.drawable.ic_star_border_black_24dp);
             }
         }
+    }
+
+    public void setOnItemClickListener(final OnItemClickListener onItemClickListener) {
+        mOnItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onClick(String id);
     }
 }
