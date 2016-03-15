@@ -32,8 +32,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class Shop extends Base {
 
     @Bind(R.id.recycler_view) RecyclerView mRecyclerView;
-    @Bind(R.id.user_picture_view) CircleImageView mUserPictureView;
-    @Bind(R.id.user_name_view) TextView mUserNameView;
     @Bind(R.id.user_points_view) TextView mUserPointsView;
     private Person mPerson;
     ShopAdapter mShopAdapter;
@@ -54,12 +52,9 @@ public class Shop extends Base {
     @Override
     protected void onResume() {
         super.onResume();
-
-        Picasso.with(this).load(mPerson.getPictureRes()).into(mUserPictureView);
-        mUserNameView.setText(mPerson.getName());
-        mUserPointsView.setText(getResources()
-                .getQuantityString(R.plurals.recypoints, mPerson.getPoints(), mPerson.getPoints())
-        );
+        String text = getResources().getString(R.string.you_have) + " " + getResources()
+                .getQuantityString(R.plurals.recypoints, mPerson.getPoints(), mPerson.getPoints());
+        mUserPointsView.setText(text);
 
         mShopAdapter.clear();
         mShopAdapter.addData(makeSPList(9));
@@ -82,22 +77,20 @@ public class Shop extends Base {
                 int user_points = mPerson.getPoints();
                 String name = SPitem_act.getName();
                 if (price > user_points) {
-                    showSnackbarMessage("No te alcanza :( ", null, null);
+                    showSnackbarMessage(getResources().getString(R.string.not_enough_rps), null, null);
                 } else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(Shop.this);
-                    builder.setMessage("Seguro que deseas comprar " +
-                            name + "?"
-                    );
-                    builder.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+                    builder.setMessage(getResources().getString(R.string.buy_verification) + " " + name + "?");
+                    builder.setPositiveButton(getResources().getString(R.string.action_yes), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            showSnackbarMessage("Comprado!", null, null);
+                            showSnackbarMessage(getResources().getString(R.string.item_bought), null, null);
                             mPerson.pay(price);
-                            mUserPointsView.setText(getResources()
-                                    .getQuantityString(R.plurals.recypoints, mPerson.getPoints(), mPerson.getPoints())
-                            );
+                            String text = getResources().getString(R.string.you_have) + " " + getResources()
+                                    .getQuantityString(R.plurals.recypoints, mPerson.getPoints(), mPerson.getPoints());
+                            mUserPointsView.setText(text);
                         }
                     });
-                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    builder.setNegativeButton(getResources().getString(R.string.action_no), new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             return;
                         }

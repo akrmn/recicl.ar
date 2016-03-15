@@ -9,7 +9,7 @@
     android:fitsSystemWindows="true"
     tools:context=".activity.Shop">
 
-    <include layout="@layout/include_toolbar_plus" />
+    <include layout="@layout/include_toolbar_shop" />
 
     <include layout="@layout/content_shop"/>
 

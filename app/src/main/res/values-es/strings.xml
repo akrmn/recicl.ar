@@ -77,4 +77,10 @@
     <string name="try_again_button">Intentar nuevamente</string>
     <string name="recycle_success_message">¡Felicidades! ¡Por tu reciclaje acabas de recibir 50 recipuntos!</string>
     <string name="recycle_success_title">Reciclaje exitoso</string>
+    <string name="action_yes">Sí</string>
+    <string name="action_no">No</string>
+    <string name="item_bought">¡Comprado!</string>
+    <string name="not_enough_rps">No tienes suficientes recipuntos</string>
+    <string name="buy_verification">Seguro que deseas comprar </string>
+    <string name="you_have">Usted posee </string>
 </resources>

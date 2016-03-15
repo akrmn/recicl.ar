@@ -66,6 +66,8 @@
     </plurals>
     <string name="title_activity_map">Map</string>
     <string name="action_ok">ok</string>
+    <string name="action_yes">Yes</string>
+    <string name="action_no">No</string>
     <string name="label_dont_know">I don\'t know, help me!</string>
     <string name="content_dont_know">¿No sabes a qué categoría pertenece lo que deseas reciclar? Pues has llegado al lugar indicado. Responde nuestro cuestionario y rápidamente sabrás cómo reciclar cualquier cosa.</string>
     <string name="action_shop">Shop</string>
@@ -81,6 +83,10 @@
     <string name="try_again_button">Try again</string>
     <string name="exit_button">Exit</string>
     <string name="error_camera_not_found">Camera not found</string>
+    <string name="item_bought">Bought!</string>
+    <string name="not_enough_rps">You dont have enough recypoints</string>
+    <string name="buy_verification">Are you sure you want to buy </string>
+    <string name="you_have">You have </string>
 
     <plurals name="recycle_success_message">
         <item quantity="one">Congratulations! You have just earned %d recypoint!</item>
