@@ -9,6 +9,7 @@
     <string name="pass_forgot_message">Please enter your email. We\'ll send you the
         instructions to set a new password.</string>
     <string name="email_sent">Email sent</string>
+    <string name="name_required">Name cannot be blank</string>
 
     <string name="required_field_error">This field is required</string>
     <string name="match_pass_error">The passwords entered does not match</string>
@@ -29,6 +30,13 @@
     <string name="label_password_forgot">Forgot my password…</string>
     <string name="divisor_or">or</string>
 
+    <string name="hint_name">Enter your name</string>
+    <string name="label_name">Name</string>
+    <string name="hint_bio">Enter your bio</string>
+    <string name="label_bio">Bio</string>
+    <string name="hint_location">Enter your location</string>
+    <string name="label_location">Location</string>
+    <string name="label_change_profile_pic">Change profile pic</string>
     <string name="label_qr">Please, scan the QR code in the recycling machine</string>
     <string name="label_continue">Continue</string>
     <string name="label_register">Register</string>
@@ -43,6 +51,7 @@
     <string name="title_activity_login">Login</string>
     <string name="title_activity_password_forgot">Forgotten Password</string>
     <string name="title_activity_materials">Materials</string>
+    <string name="title_activity_editprofile">Edit profile</string>
     <string name="label_organic_waste">Organic Waste</string>
     <string name="label_cardboard">Cardboard</string>
     <string name="label_plastic">Plastics</string>

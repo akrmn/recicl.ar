@@ -108,7 +108,9 @@ public class Profile extends Base {
     }
 
     private boolean onActionEditProfileSelected() {
-        showSnackbarMessage("Ahora se abre la vista de editar perfil", null, null);
+        Intent intent = new Intent(Profile.this, EditProfile.class);
+        startActivity(intent);
+        finish();
         return true;
     }
 
