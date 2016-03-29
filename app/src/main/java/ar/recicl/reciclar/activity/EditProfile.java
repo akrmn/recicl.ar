@@ -51,7 +51,11 @@ public class EditProfile extends Base {
 
     @OnClick(R.id.button_change_prof_pic)
     void OnButtonCPClick(){
-
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(
+                "content://media/internal/images/media"
+        ));
+        intent.setType("image/*");
+        startActivity(intent);
     }
 
 
