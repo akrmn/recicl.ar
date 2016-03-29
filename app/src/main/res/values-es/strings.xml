@@ -95,4 +95,13 @@
     <string name="history_item_message_7">Diez botellas de plástico</string>
     <string name="history_item_message_8">Cinco cuadernos usados</string>
     <string name="history_item_message_9">4kg de periódico</string>
+    <string name="hint_bio">Ingresa tu bio</string>
+    <string name="hint_location">Ingresa tu localidad</string>
+    <string name="hint_name">Ingresa tu nombre</string>
+    <string name="label_bio">Bio</string>
+    <string name="label_change_profile_pic">Cambiar foto de perfil</string>
+    <string name="label_location">Localidad</string>
+    <string name="label_name">Nombre</string>
+    <string name="name_required">El campo de nombre no puede estar vacio</string>
+    <string name="title_activity_editprofile">Editar perfil</string>
 </resources>
