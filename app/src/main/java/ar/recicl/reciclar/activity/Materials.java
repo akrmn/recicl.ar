@@ -13,26 +13,27 @@ public class Materials extends Base {
 
     @OnClick(R.id.button_dont_know)
     void onClickDontKnow() {
-        showSnackbarMessage("Ahora se muestra la actividad estilo «Akinator» que ayuda a clasificar", null, null);
+        Intent intent = new Intent(this, Helper.class);
+        startActivity(intent);
     }
     @OnClick(R.id.button_glass)
     void onClickGlass() {
-        loadRecyclingPoints(RecyclingCenters.TYPE_GLASS);
+        loadRecyclingCenters(RecyclingCenters.TYPE_GLASS);
     }
     @OnClick(R.id.button_plastic)
     void onClickPlastic() {
-        loadRecyclingPoints(RecyclingCenters.TYPE_PLASTIC);
+        loadRecyclingCenters(RecyclingCenters.TYPE_PLASTIC);
     }
     @OnClick(R.id.button_cardboard)
     void onClickCardboard() {
-        loadRecyclingPoints(RecyclingCenters.TYPE_CARDBOARD);
+        loadRecyclingCenters(RecyclingCenters.TYPE_CARDBOARD);
     }
     @OnClick(R.id.button_organic_waste)
     void onClickOrganicWaste() {
-        loadRecyclingPoints(RecyclingCenters.TYPE_ORGANIC);
+        loadRecyclingCenters(RecyclingCenters.TYPE_ORGANIC);
     }
 
-    void loadRecyclingPoints(int type) {
+    void loadRecyclingCenters(int type) {
         Intent intent = new Intent(this, RecyclingCenters.class);
         intent.putExtra("type", type);
         startActivity(intent);
@@ -40,7 +41,7 @@ public class Materials extends Base {
 
     @OnClick(R.id.button_info_dont_know)
     void onClickDontKnowInfo() {
-        showAlert(R.string.label_dont_know, R.string.content_dont_know);
+        showAlert(R.string.label_help_me, R.string.content_dont_know);
     }
     @OnClick(R.id.button_info_glass)
     void onClickGlassInfo() {

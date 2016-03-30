@@ -192,7 +192,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/label_dont_know"
+            android:text="@string/label_help_me"
             android:textColor="@color/text_primary_white"
             android:textSize="16sp"
             android:textAllCaps="true"

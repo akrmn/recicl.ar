@@ -93,6 +93,15 @@ public abstract class Base extends AppCompatActivity {
         builder.create().show();
     }
 
+    protected void showAlert(String heading, String body) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(body)
+                .setTitle(heading)
+                .setCancelable(false)
+                .setPositiveButton(android.R.string.ok, null);
+        builder.create().show();
+    }
+
     protected String getTextAsString(EditText view) {
         if (view != null && view.getText() != null)
             return view.getText().toString();

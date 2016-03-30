@@ -54,7 +54,7 @@
     <string name="title_activity_editprofile">Edit profile</string>
     <string name="label_organic_waste">Organic Waste</string>
     <string name="label_cardboard">Cardboard</string>
-    <string name="label_plastic">Plastics</string>
+    <string name="label_plastic">Plastic</string>
     <string name="label_glass">Glass</string>
     <string name="label_materials_1">Pick the type of material you want to recycle</string>
     <string name="label_materials_2">For more information about each material, tap the its info icon</string>
@@ -77,7 +77,7 @@
     <string name="action_ok">ok</string>
     <string name="action_yes">Yes</string>
     <string name="action_no">No</string>
-    <string name="label_dont_know">I don\'t know, help me!</string>
+    <string name="label_help_me">I don\'t know, help me!</string>
     <string name="content_dont_know">¿No sabes a qué categoría pertenece lo que deseas reciclar? Pues has llegado al lugar indicado. Responde nuestro cuestionario y rápidamente sabrás cómo reciclar cualquier cosa.</string>
     <string name="action_shop">Shop</string>
     <string name="title_activity_profile">Profile</string>
@@ -113,4 +113,24 @@
     <string name="history_item_message_7">Ten plastic bottles</string>
     <string name="history_item_message_8">Five used notebooks</string>
     <string name="history_item_message_9">4kg of newspaper</string>
+
+    <string name="q_bad_smell">Does your object smell bad?</string>
+    <string name="q_flies">Does your object have flies around it?</string>
+    <string name="q_transparent">Is your object transparent?</string>
+    <string name="q_dense">Is your object very dense?</string>
+    <string name="q_fragile">Is your object fragile?</string>
+    <string name="q_malleable">Is your object malleable?</string>
+    <string name="q_brown_color">Is your object brown in color?</string>
+    <string name="q_has_cap">Does your object come with a cap?</string>
+    <string name="q_serve_food">Would you serve food on or store food inside your object?</string>
+    <string name="q_bad_taste">Does your object have a bad taste?</string>
+    <string name="title_activity_helper_question">Helper: Question %1$d</string>
+    <string name="label_yes">Yes</string>
+    <string name="label_no">No</string>
+    <string name="label_dont_know">I don\'t know</string>
+    <string name="title_activity_helper">Helper</string>
+    <string name="label_helper_success">I believe your material is</string>
+    <string name="button_helper_find_centers">Find %1$s recycling centers</string>
+    <string name="label_helper_failure">You have beaten me! I don\'t know what your material is!</string>
+    <string name="button_helper_try_again">Try again</string>
 </resources>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.Helper"
+    tools:showIn="@layout/activity_helper"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:weightSum="4">
+
+    <TextView
+        android:id="@+id/label_question_statement"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:text="@string/q_bad_smell"
+        android:textColor="@color/text_primary_black"
+        android:textStyle="italic"
+        android:textSize="24sp"
+        android:gravity="center"/>
+
+    <RelativeLayout
+        android:id="@+id/button_yes"
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:drawable/btn_default"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:backgroundTint="@color/button_helper_option"
+        android:clickable="true"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_yes"
+            android:textColor="@color/text_primary_white"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/button_no"
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:drawable/btn_default"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:backgroundTint="@color/button_helper_option"
+        android:clickable="true"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_no"
+            android:textColor="@color/text_primary_white"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/button_dont_know"
+        android:layout_margin="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:drawable/btn_default"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:backgroundTint="@color/button_helper_option"
+        android:clickable="true"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_dont_know"
+            android:textColor="@color/text_primary_white"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

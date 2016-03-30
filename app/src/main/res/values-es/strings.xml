@@ -55,7 +55,7 @@
     <string name="action_ok">ok</string>
     <string name="error">Error</string>
     <string name="invalid_email_password">No se pudo ingresar debido a combinación inválida de email y contraseña.</string>
-    <string name="label_dont_know">No sé, ¡ayúdame!</string>
+    <string name="label_help_me">No sé, ¡ayúdame!</string>
     <string name="content_dont_know">¿No sabes a qué categoría pertenece lo que deseas reciclar? Pues has llegado al lugar indicado. Responde nuestro cuestionario y rápidamente sabrás cómo reciclar cualquier cosa.</string>
     <string name="action_shop">Comprar</string>
     <string name="title_activity_shop">Compras</string>
@@ -64,8 +64,6 @@
     <string name="title_fragment_friends">Amigos</string>
     <string name="title_fragment_history">Historial</string>
     <string name="title_activity_profile">Perfil</string>
-    <string name="section_format"></string>
-    <string name="action_settings"></string>
     <string name="action_edit_profile">Editar perfil</string>
     <string name="label_edit_profile">Editar perfil</string>
     <string name="title_activity_qrscanner">Escanear código QR</string>
@@ -75,7 +73,6 @@
     <string name="recycle_failure_message">Disculpe, no hemos podido reconocer el código escaneado.</string>
     <string name="recycle_failure_title">Reciclaje fallido</string>
     <string name="try_again_button">Intentar nuevamente</string>
-    <string name="recycle_success_message">¡Felicidades! ¡Por tu reciclaje acabas de recibir 50 recipuntos!</string>
     <string name="recycle_success_title">Reciclaje exitoso</string>
     <string name="action_yes">Sí</string>
     <string name="action_no">No</string>
@@ -104,4 +101,22 @@
     <string name="label_name">Nombre</string>
     <string name="name_required">El campo de nombre no puede estar vacio</string>
     <string name="title_activity_editprofile">Editar perfil</string>
+
+    <string name="q_bad_smell">¿Tu objeto tiene un olor desagradable?</string>
+    <string name="q_flies">¿Tu objeto tiene moscas alrededor?</string>
+    <string name="q_transparent">¿Tu objeto es transparente?</string>
+    <string name="q_dense">¿Tu objeto es muy denso?</string>
+    <string name="q_fragile">¿Tu objeto es quebradizo?</string>
+    <string name="q_malleable">¿Tu objeto es maleable?</string>
+    <string name="q_brown_color">¿Tu objeto es de color marrón?</string>
+    <string name="q_has_cap">¿Tu objeto tiene una tapa?</string>
+    <string name="q_serve_food">¿Servirías comida sobre tu objeto o la guardarías en él?</string>
+    <string name="q_bad_taste">¿Tu objeto tiene un sabor desagradable?</string>
+    <string name="button_helper_find_centers">Buscar centros de reciclaje de %1$s</string>
+    <string name="title_activity_helper">Ayudante</string>
+    <string name="title_activity_helper_question">Ayudante: Pregunta %1$d</string>
+    <string name="label_dont_know">No sé</string>
+    <string name="label_yes">Sí</string>
+    <string name="label_no">No</string>
+    <string name="label_helper_success">Creo que tu material es</string>
 </resources>

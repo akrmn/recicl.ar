@@ -2,7 +2,7 @@
 <resources
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <color name="primary">#0097A9</color>
+    <color name="primary">#0097a7</color>
     <color name="primary_dark">#006064</color>
     <color name="accent">#1de9b6</color>
     <color name="lineBreak">#D8D4D4</color>
@@ -21,7 +21,8 @@
 
     <color name="button_dont_know">#d32f2f</color>
     <color name="button_glass">#00c853</color>
-    <color name="button_plastic">#fbc02d</color>
+    <color name="button_plastic">#f9a825</color>
     <color name="button_cardboard">#1565c0</color>
     <color name="button_organic_waste">#757575</color>
+    <color name="button_helper_option">#4DD0E1</color>
 </resources>
