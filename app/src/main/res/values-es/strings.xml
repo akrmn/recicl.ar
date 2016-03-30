@@ -119,4 +119,6 @@
     <string name="label_yes">Sí</string>
     <string name="label_no">No</string>
     <string name="label_helper_success">Creo que tu material es</string>
+    <string name="button_helper_try_again">Intentalo de nuevo</string>
+    <string name="label_helper_failure">¡Me venciste! ¡No sé cuál es tu material!</string>
 </resources>
