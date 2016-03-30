@@ -14,8 +14,12 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <!-- EXTERNAL_STORAGE permissions are optional for Android 6.0 onwards. -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="22" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="22" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -84,28 +88,35 @@
             android:name=".activity.Profile"
             android:label="@string/title_activity_profile"
             android:parentActivityName=".activity.Feed"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ar.recicl.reciclar.activity.Feed"/>
         </activity>
-        <activity android:name=".activity.QRscanner"/>
-        <activity android:name=".activity.EditProfile"/>
+        <activity
+            android:name=".activity.QRscanner"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.EditProfile"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.Helper"
             android:label="@string/title_activity_helper_question"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
         </activity>
         <activity
             android:name=".activity.HelperSuccess"
             android:label="@string/title_activity_helper"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
         </activity>
         <activity
             android:name=".activity.HelperFailure"
             android:label="@string/title_activity_helper"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
         </activity>
     </application>
-
 </manifest>
